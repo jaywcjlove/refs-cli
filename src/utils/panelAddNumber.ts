@@ -10,7 +10,7 @@ export function panelAddNumber(arr: (Element | ElementContent)[] = [], result: R
   let level = -1;
   while (n < arr.length) {
     const toc = arr[n];
-    const titleNum = toc.type === 'element' ? Number(toc?.tagName?.replace(/^h/, '')) : null;
+    const titleNum = toc?.type === 'element' ? Number(toc?.tagName?.replace(/^h/, '')) : null;
     if (titleNum && titleNum > -1) {
       level = titleNum;
     }
