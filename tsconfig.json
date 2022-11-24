@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "target": "ES2022",
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "moduleResolution": "Node16",
+    "sourceMap": true,
+    "outDir": "./lib",
+    "allowJs": true,
+    "baseUrl": "./"
+  },
+  "include": ["src"]
+}
