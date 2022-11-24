@@ -7,7 +7,6 @@ import { Options } from './utils.js';
 export function rehypeTitle(node: Root | RootContent, { filename = '', static_path }: Options = {}) {
   if (node.type === 'element' && node.tagName === 'h1' && filename !== 'index') {
     const iconPath = path.resolve(ICONS_PATH, `${filename}.svg`);
-    console.log('iconPath:', iconPath)
     const iconDefaultPath = path.resolve(static_path, `assets/list.svg`);
     const iconExist = fs.existsSync(iconPath);
     if (iconExist) {
