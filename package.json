@@ -2,6 +2,7 @@
   "name": "refs-cli",
   "version": "0.0.2",
   "description": "Command line tool to generate Quick Reference website.",
+  "homepage": "https://jaywcjlove.github.io/refs-cli/",
   "author": "jaywcjlove",
   "license": "MIT",
   "type": "module",
@@ -26,10 +27,14 @@
     "refs",
     "cli"
   ],
-  "homepage": "https://github.com/jaywcjlove/refs-cli#readme",
   "engines": {
     "node": ">=16.0.0"
   },
+  "files": [
+    "src",
+    "lib",
+    "static"
+  ],
   "dependencies": {
     "@types/fs-extra": "^9.0.13",
     "@types/minimist": "^1.2.2",
