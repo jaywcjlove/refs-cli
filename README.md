@@ -3,24 +3,28 @@ Reference CLI
 
 Command line tool to generate `Quick Reference` website. This is also a tool separated from [`Quick Reference`](https://jaywcjlove.github.io/reference) to help [`Quick Reference`](https://jaywcjlove.github.io/reference) compile and generate HTML websites
 
+<!--rehype:ignore:start-->
+[![Quick Reference](https://user-images.githubusercontent.com/1680273/201931931-d8559417-0a15-46af-a009-ec1e56e5b778.png)](https://jaywcjlove.github.io/reference)
+<!--rehype:ignore:end-->
+
 ## Document
 
-[Reference English](./docs/quickreference.md)<!--rehype:style=background: rgb(92 107 192);&class=contributing&data-info=👆See what's missing?-->
+[Reference English](./docs/quickreference.md)<!--rehype:style=background: rgb(92 107 192);&class=contributing&data-info=👆See what's missing?-->   
 [Reference 中文](https://jaywcjlove.github.io/reference/docs/quickreference.html)<!--rehype:style=background: rgb(139 170 229);&class=contributing-->   
 <!--rehype:class=home-card-->
 
 ## Example Show
 
-[Bash](https://jaywcjlove.github.io/reference/docs/bash.html)<!--rehype:style=background: rgb(72 143 223);-->
-[C](https://jaywcjlove.github.io/reference/docs/c.html)<!--rehype:style=background: rgb(92 107 192);-->
-[C#](https://jaywcjlove.github.io/reference/docs/cs.html)<!--rehype:style=background: rgb(6 147 13);&class=contributing-->
-[C++](https://jaywcjlove.github.io/reference/docs/cpp.html)<!--rehype:style=background: rgb(6 147 13);&class=contributing-->
-[Dart](https://jaywcjlove.github.io/reference/docs/dart.html)<!--rehype:style=background: rgb(64 196 255);-->
-[Docker](https://jaywcjlove.github.io/reference/docs/docker.html)<!--rehype:style=background: rgb(72 143 223);-->
-[Dockerfile](https://jaywcjlove.github.io/reference/docs/dockerfile.html)<!--rehype:style=background: rgb(0 72 153);&class=tag&data-lang=Docker-->
-[Django](https://jaywcjlove.github.io/reference/docs/djiango.html)<!--rehype:style=background: rgb(12 75 51);&class=contributing tag&data-lang=Python-->
-[Flutter](https://jaywcjlove.github.io/reference/docs/flutter.html)<!--rehype:style=background: rgb(150 220 254);&class=contributing tag&data-lang=Dart-->
-[Golang](https://jaywcjlove.github.io/reference/docs/golang.html)<!--rehype:style=background: rgb(39 160 193);-->
+[Bash](https://jaywcjlove.github.io/reference/docs/bash.html)<!--rehype:style=background: rgb(72 143 223);-->  
+[C](https://jaywcjlove.github.io/reference/docs/c.html)<!--rehype:style=background: rgb(92 107 192);-->  
+[C#](https://jaywcjlove.github.io/reference/docs/cs.html)<!--rehype:style=background: rgb(6 147 13);&class=contributing-->  
+[C++](https://jaywcjlove.github.io/reference/docs/cpp.html)<!--rehype:style=background: rgb(6 147 13);&class=contributing-->  
+[Dart](https://jaywcjlove.github.io/reference/docs/dart.html)<!--rehype:style=background: rgb(64 196 255);-->  
+[Docker](https://jaywcjlove.github.io/reference/docs/docker.html)<!--rehype:style=background: rgb(72 143 223);-->  
+[Dockerfile](https://jaywcjlove.github.io/reference/docs/dockerfile.html)<!--rehype:style=background: rgb(0 72 153);&class=tag&data-lang=Docker-->  
+[Django](https://jaywcjlove.github.io/reference/docs/djiango.html)<!--rehype:style=background: rgb(12 75 51);&class=contributing tag&data-lang=Python-->  
+[Flutter](https://jaywcjlove.github.io/reference/docs/flutter.html)<!--rehype:style=background: rgb(150 220 254);&class=contributing tag&data-lang=Dart-->  
+[Golang](https://jaywcjlove.github.io/reference/docs/golang.html)<!--rehype:style=background: rgb(39 160 193);-->  
 <!--rehype:class=home-card-->
 
 ## Thanks to all contributors
