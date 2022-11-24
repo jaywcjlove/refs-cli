@@ -1,6 +1,6 @@
 {
   "name": "refs-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Command line tool to generate Quick Reference website.",
   "author": "jaywcjlove",
   "license": "MIT",
