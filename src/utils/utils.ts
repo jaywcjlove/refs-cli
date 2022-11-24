@@ -12,7 +12,7 @@ export const DOCS = path.resolve(process.cwd(), 'docs');
 /** 搜索数据路径 */
 export const SEARCH_DATA = path.resolve(OUTOUT, 'data.json');
 export const SEARCH_DATA_JS = path.resolve(OUTOUT, 'data.js');
-export const SEARCH_DATA_CACHE = path.resolve(process.cwd(), 'node_modules/.cache/reference-cli/data.json');
+export const SEARCH_DATA_CACHE = path.resolve(process.cwd(), 'node_modules/.cache/refs-cli/data.json');
 
 export async function copyCSSFile(options: Options) {
   await fs.copy(path.resolve(options.static_path, './style'), path.resolve(options.output, 'style'));
@@ -104,7 +104,7 @@ export async function createHTML(files: IFileDirStat[] = [], opts: Options, num 
 const pkg = fs.readJSONSync(path.resolve(__filename, '../../../package.json'));
 
 export const helpStr = `
-  Usage: \x1b[34;1mreference-cli\x1b[0m [output-dir] [--help|h]
+  Usage: \x1b[34;1mrefs-cli\x1b[0m [output-dir] [--help|h]
 
     Displays help information.
 
@@ -118,10 +118,10 @@ export const helpStr = `
 
   Example:
 
-    $\x1b[35m npx\x1b[0m reference-cli
-    $\x1b[35m reference-cli\x1b[0m --watch
-    $\x1b[35m reference-cli\x1b[0m --output website
-    $\x1b[35m reference-cli\x1b[0m 
+    $\x1b[35m npx\x1b[0m refs-cli
+    $\x1b[35m refs-cli\x1b[0m --watch
+    $\x1b[35m refs-cli\x1b[0m --output website
+    $\x1b[35m refs-cli\x1b[0m 
 
-  reference-cli@v${pkg.version}
+  refs-cli@v${pkg.version}
 `;

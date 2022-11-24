@@ -1,4 +1,4 @@
-Reference CLI
+Refs CLI
 ===
 
 Command line tool to generate `Quick Reference` website. This is also a tool separated from [`Quick Reference`](https://jaywcjlove.github.io/reference) to help [`Quick Reference`](https://jaywcjlove.github.io/reference) compile and generate HTML websites
@@ -31,7 +31,7 @@ Command line tool to generate `Quick Reference` website. This is also a tool sep
 ## Command Help
 
 ```bash
-Usage: reference-cli [output-dir] [--help|h]
+Usage: refs-cli [output-dir] [--help|h]
 
   Displays help information.
 
@@ -45,12 +45,12 @@ Options:
 
 Example:
 
-  $ npx reference-cli
-  $ reference-cli --watch
-  $ reference-cli --output website
-  $ reference-cli
+  $ npx refs-cli
+  $ refs-cli --watch
+  $ refs-cli --output website
+  $ refs-cli
 
-reference-cli@v0.0.1
+refs-cli@v0.0.1
 ```
 <!--rehype:ignore:end-->
 
