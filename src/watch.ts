@@ -5,9 +5,9 @@ import { Options, DOCS, run, createHTML, copyCSSFile, copyJSFile } from './utils
 
 export default async function watch(options: Options) {
   await run(options);
-  const homeMdPath = path.relative(process.cwd(), 'README.md');
-  const cssDirPath = path.relative(options.static_path, 'style');
-  const jsDirPath = path.relative(options.static_path, 'js');
+  const homeMdPath = path.resolve(process.cwd(), 'README.md');
+  const cssDirPath = path.resolve(options.static_path, 'style');
+  const jsDirPath = path.resolve(options.static_path, 'js');
   const watcher = chokidar.watch([DOCS, homeMdPath, cssDirPath, jsDirPath], {
     ignored: /(^|[\/\\])\../, // ignore dotfiles
     persistent: true,
