@@ -62,3 +62,8 @@ jobs:
             Comparing Changes: ${{ steps.changelog.outputs.compareurl }}  
             
             ${{ steps.changelog.outputs.changelog }}
+
+      - run: npm publish
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
