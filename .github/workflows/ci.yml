@@ -15,6 +15,7 @@ jobs:
 
       - run: npm install
       - run: npm run build
+      - run: npm run doc
 
       - name: Generate Contributors Images
         uses: jaywcjlove/github-action-contributors@main
@@ -29,9 +30,35 @@ jobs:
           path: README.md
           body: ${{steps.contributors.outputs.htmlList}}
 
+      - name: Create Tag
+        id: create_tag
+        uses: jaywcjlove/create-tag-action@main
+        with:
+          package-path: ./package.json
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           commit_message: ${{ github.event.head_commit.message }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
+      - name: Generate Changelog
+        id: changelog
+        uses: jaywcjlove/changelog-generator@main
+        with:
+          filter-author: (小弟调调™)
+          filter: (^[\s]+?[R|r]elease)|(^[R|r]elease)
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        if: steps.create_tag.outputs.successful
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: ${{ steps.create_tag.outputs.version }}
+          tag: ${{ steps.create_tag.outputs.version }}
+          body: |
+            Documentation ${{ needs.build.outputs.create_tag_version }}: https://raw.githack.com/jaywcjlove/reference-cli/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html  
+            Comparing Changes: ${{ steps.changelog.outputs.compareurl }}  
+            
+            ${{ steps.changelog.outputs.changelog }}
