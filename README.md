@@ -13,6 +13,33 @@ Command line tool to generate `Quick Reference` website. This is also a tool sep
 [Reference 中文](https://jaywcjlove.github.io/reference/docs/quickreference.html)<!--rehype:style=background: rgb(139 170 229);&class=contributing-->   
 <!--rehype:class=home-card-->
 
+<!--rehype:ignore:start-->
+## Command Help
+
+```bash
+Usage: reference-cli [output-dir] [--help|h]
+
+  Displays help information.
+
+Options:
+
+  --version, -v   Show version number
+  --help, -h      Displays help information.
+  --watch, -w     Watch and compile Markdown files.
+  --output, -o    Output directory. defalut(dist)
+  --force, -f     Force file regeneration.
+
+Example:
+
+  $ npx reference-cli
+  $ reference-cli --watch
+  $ reference-cli --output website
+  $ reference-cli
+
+reference-cli@v0.0.1
+```
+<!--rehype:ignore:end-->
+
 ## Example Show
 
 [Bash](https://jaywcjlove.github.io/reference/docs/bash.html)<!--rehype:style=background: rgb(72 143 223);-->  
