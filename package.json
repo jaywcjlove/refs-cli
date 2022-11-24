@@ -10,7 +10,9 @@
   },
   "scripts": {
     "build": "tsc",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "start": "node ./lib/cli.js -w",
+    "doc": "node ./lib/cli.js"
   },
   "repository": {
     "type": "git",
