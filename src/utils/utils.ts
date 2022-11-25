@@ -19,6 +19,7 @@ export async function copyJSFile(options: Options) {
 
 export interface Config {
   description?: string;
+  keywords?: string;
   'data-info'?: string;
   search?: {
     label: string;
