@@ -50,7 +50,8 @@ export function create(str = '', options: Options = {}) {
     .replace(/<!--([\s\S]*?)-->/gi, '')
     .replace(/\n/, '');
 
-  description = (options.config.description ||description).replace(/\{\{description\}\}/ig, description)
+  description = (options.config.description ||description).replace(/\{\{description\}\}/ig, description);
+  const keywords = `${!options.isHome ? options.filename + ',' : ''}${options.config?.keywords || ''}`;
 
   const subTitle = options.filename && !options.isHome ? `${options.filename} cheatsheet & ` : '';
 
@@ -80,7 +81,7 @@ export function create(str = '', options: Options = {}) {
           link: [{ rel: 'icon', href: favicon, type: 'image/svg+xml' }],
           meta: [
             { description: description },
-            { keywords: `Quick,Reference,cheatsheet,${(!options.isHome && options.filename) || ''}` },
+            { keywords: keywords },
           ],
         },
       ],
