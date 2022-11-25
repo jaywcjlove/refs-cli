@@ -12,9 +12,9 @@ interface Option extends InitOption {
   githubURL?: string;
 }
 
-export function getReferrals(): MenuData[] {
-  const url = process.env.REF_URL;
-  const label = process.env.REF_LABEL;
+export function getReferrals(options: Option = {}): MenuData[] {
+  const url = process.env.REF_URL || options.config?.home?.url;
+  const label = process.env.REF_LABEL || options.config?.home?.label;
   if (!url || !label) return [];
   return [
     {
@@ -56,7 +56,7 @@ export function header(options: Option = {}): Element {
           children: [
             {
               type: 'text',
-              value: '搜索',
+              value: options.config.search?.label || 'Search',
             },
           ],
         },
@@ -76,12 +76,12 @@ export function header(options: Option = {}): Element {
         },
       ],
     },
-    ...getReferrals(),
+    ...getReferrals(options),
     {
       menu: true,
       href: options.githubURL,
       target: '__blank',
-      label: '编辑',
+      label: options.config.editor?.label || 'Edit',
       children: [editor],
     },
     ...darkMode(options),

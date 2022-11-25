@@ -6,20 +6,35 @@ import { create } from './create.js';
 import { ParsedArgs } from 'minimist';
 
 export const __filename = fileURLToPath(import.meta.url);
-
 export const OUTOUT = path.resolve(process.cwd(), 'dist');
 export const DOCS = path.resolve(process.cwd(), 'docs');
 /** 搜索数据路径 */
-export const SEARCH_DATA = path.resolve(OUTOUT, 'data.json');
-export const SEARCH_DATA_JS = path.resolve(OUTOUT, 'data.js');
 export const SEARCH_DATA_CACHE = path.resolve(process.cwd(), 'node_modules/.cache/refs-cli/data.json');
-
 export async function copyCSSFile(options: Options) {
   await fs.copy(path.resolve(options.static_path, './style'), path.resolve(options.output, 'style'));
 }
-
 export async function copyJSFile(options: Options) {
   await fs.copy(path.resolve(options.static_path, './js'), path.resolve(options.output, 'js'));
+}
+
+export interface Config {
+  description?: string;
+  'data-info'?: string;
+  search?: {
+    label: string;
+    placeholder: string;
+    cancel: string;
+  },
+  editor?: {
+    label: string;
+  },
+  github?: {
+    url: string;
+  },
+  home?: {
+    label: string;
+    url: string;
+  }
 }
 
 export interface Options extends Partial<ParsedArgs> {
@@ -28,10 +43,10 @@ export interface Options extends Partial<ParsedArgs> {
   build?: boolean;
   output?: string;
   force?: boolean;
+  config?: Config;
 }
 
 export async function run(options: Options) {
-  options.output = path.resolve(options.output || OUTOUT);
   options.static_path = path.resolve(__filename, '../../../static');
   try {
     await fs.ensureDir(options.output);
@@ -39,7 +54,7 @@ export async function run(options: Options) {
     await fs.ensureDir(path.resolve(options.static_path, './style'));
     await fs.ensureFile(SEARCH_DATA_CACHE);
     await fs.writeFile(SEARCH_DATA_CACHE, '{}');
-    await fs.writeFile(SEARCH_DATA, '[]');
+    await fs.writeFile(path.relative(options.output, 'data.json'), '[]');
     await copyCSSFile(options);
     await copyJSFile(options);
     const files = await recursiveReaddirFiles(process.cwd(), {
@@ -68,7 +83,7 @@ export async function createHTML(files: IFileDirStat[] = [], opts: Options, num 
   const mdstr = await fs.readFile(dataFile.path);
   const htmlPath = path.relative(DOCS, dataFile.path);
   const outputHTMLPath = path
-    .resolve(OUTOUT, 'docs', htmlPath)
+    .resolve(opts.output, 'docs', htmlPath)
     .replace(/README.md$/i, 'index.html')
     .replace(/.md$/, '.html');
 
@@ -77,27 +92,28 @@ export async function createHTML(files: IFileDirStat[] = [], opts: Options, num 
     filename: path.basename(outputHTMLPath, '.html'),
     isHome: /README.md$/.test(path.relative(process.cwd(), dataFile.path)),
     githubURL,
-    homePath: path.relative(path.dirname(outputHTMLPath), path.resolve(OUTOUT, 'index.html')),
+    homePath: path.relative(path.dirname(outputHTMLPath), path.resolve(opts.output, 'index.html')),
     css: [
-      path.relative(path.dirname(outputHTMLPath), path.resolve(OUTOUT, 'style/style.css')),
-      path.relative(path.dirname(outputHTMLPath), path.resolve(OUTOUT, 'style/katex.css')),
+      path.relative(path.dirname(outputHTMLPath), path.resolve(opts.output, 'style/style.css')),
+      path.relative(path.dirname(outputHTMLPath), path.resolve(opts.output, 'style/katex.css')),
     ],
   };
   const { html, data } = create(mdstr.toString(), { ...options, ...opts });
   if (!options.isHome) {
     const searchData = await fs.readJSON(SEARCH_DATA_CACHE);
-    data.path = path.relative(OUTOUT, outputHTMLPath).replace(/[\\/]/g, '/');
+    data.path = path.relative(opts.output, outputHTMLPath).replace(/[\\/]/g, '/');
     searchData[options.filename] = data;
     searchData.name = options.filename;
     await fs.writeJSON(SEARCH_DATA_CACHE, searchData);
     const resultSearchData = Object.keys({ ...searchData })
       .map((name) => searchData[name])
       .filter((item) => typeof item !== 'string');
-    await fs.writeJSON(SEARCH_DATA, resultSearchData);
+    await fs.writeJSON(path.relative(opts.output, 'data.json'), resultSearchData);
+    const SEARCH_DATA_JS = path.resolve(opts.output, 'data.js');
     await fs.writeFile(SEARCH_DATA_JS, `const REFS_DATA = ${JSON.stringify(resultSearchData)}`);
   }
   await fs.writeFile(outputHTMLPath, html);
-  console.log(`♻️ \x1b[32;1m ${path.relative(OUTOUT, outputHTMLPath)} \x1b[0m`);
+  console.log(`♻️ \x1b[32;1m ${path.relative(opts.output, outputHTMLPath)} \x1b[0m`);
   createHTML(files, opts, num);
 }
 

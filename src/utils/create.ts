@@ -49,7 +49,11 @@ export function create(str = '', options: Options = {}) {
     .replace(/\[([\s\S]*?)?\]\(([\s\S]*?)?\)/g, '$1')
     .replace(/<!--([\s\S]*?)-->/gi, '')
     .replace(/\n/, '');
+
+  description = (options.config.description ||description).replace(/\{\{description\}\}/ig, description)
+
   const subTitle = options.filename && !options.isHome ? `${options.filename} cheatsheet & ` : '';
+
   /** 用于搜索数据 */
   const detailData: DetailData = {
     title: title.replace(/\n/g, ''),
@@ -75,7 +79,7 @@ export function create(str = '', options: Options = {}) {
           css: [...options.css],
           link: [{ rel: 'icon', href: favicon, type: 'image/svg+xml' }],
           meta: [
-            { description: `${description}为开发人员分享快速参考备忘单。` },
+            { description: description },
             { keywords: `Quick,Reference,cheatsheet,${(!options.isHome && options.filename) || ''}` },
           ],
         },

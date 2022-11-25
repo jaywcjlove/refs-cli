@@ -56,6 +56,32 @@ Example:
 
 refs-cli@v0.0.1
 ```
+
+## Config
+
+Store `.refsrc.json` in the root directory of the project
+
+```json
+{
+  "description": "{{description}}, Sharing Quick Reference Cheat Sheets for Developers",
+  "data-info": "👆👆need your participation",
+  "search": {
+    "label": "Search",
+    "placeholder": "Search for cheatsheet",
+    "cancel": "Cancel"
+  },
+  "editor": {
+    "label": "Edit"
+  },
+  "github": {
+    "url": "https://github.com/jaywcjlove/refs-cli"
+  },
+  "home": {
+    "label": "网站首页",
+    "url": "https://jaywcjlove.github.io/refs-cli"
+  }
+}
+```
 <!--rehype:ignore:end-->
 
 ## Thanks to all contributors

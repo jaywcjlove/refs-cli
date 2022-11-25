@@ -9,7 +9,7 @@ import { Options as RunOptions} from '../utils/utils.js'
 const resultHomeCard: Record<string, DetailData> = {};
 const COLOR_REG = /background:(\s+)?rgb\(([\d]+\s+[\d]+\s+[\d]+(\s+)?)\);?/gi;
 
-export function homeCardIcons(node: Root | RootContent, parent: Root | Element, { isHome, static_path }: RunOptions) {
+export function homeCardIcons(node: Root | RootContent, parent: Root | Element, { isHome, static_path, config }: RunOptions) {
   const properties = node.type === 'element' ? node.properties : {};
   const className = node.type === 'element' && properties ? [properties.class || properties.className].flat() : [];
   if (
@@ -20,7 +20,7 @@ export function homeCardIcons(node: Root | RootContent, parent: Root | Element, 
   ) {
     const info = node.properties['data-info'];
     if (!info) {
-      node.properties['data-info'] = '👆待完善需要您的参与';
+      node.properties['data-info'] = config['data-info'] ||'👆need your participation';
     }
   }
   if (
