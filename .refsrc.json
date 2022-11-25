@@ -1,0 +1,20 @@
+{
+  "description": "{{description}}, Sharing Quick Reference Cheat Sheets for Developers",
+  "keywords": "",
+  "data-info": "👆👆need your participation",
+  "search": {
+    "label": "Search",
+    "placeholder": "Search for cheatsheet",
+    "cancel": "Cancel"
+  },
+  "editor": {
+    "label": "Edit"
+  },
+  "github": {
+    "url": "https://github.com/jaywcjlove/refs-cli"
+  },
+  "home": {
+    "label": "网站首页",
+    "url": "https://jaywcjlove.github.io/refs-cli"
+  }
+}

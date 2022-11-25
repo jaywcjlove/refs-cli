@@ -24,7 +24,7 @@ npm i         # install dependencies
 npm run build # Compile output HTML
 ```
 
-HTML 存放在仓库根目录下的 `dist` 目录中，将 `dist/index.html` 静态页面在浏览器中打开预览。
+The HTML is stored in the `dist` directory under the root directory of the warehouse, and the `dist/index.html` static page is opened in the browser for preview.
 
 ```shell
 # Listen to the md file to compile and output HTML
@@ -45,15 +45,13 @@ npm run start
 │   ├── ....
 │   └── yaml.md
 ├── package.json
-└── scripts     # MD to HTML compiled script
-    ├── assets  # LOGO icon file resource
-    ├── ....
-    └── watch.mjs
+├── .refsrc.json # refs configuration
+└── assets  # LOGO icon file resource
 ```
 
 ### Add a checklist
 
-一个简单的备忘清单包含 `页面大标题<h1>`，放在大标题下面的 `介绍` 文本，`<h2>` 分类标题，`<h3>` 内容为 `卡片`
+A simple checklist contains `page headline <h1>`, `introduction` text placed below the headline, `<h2>` category headings, `<h3>` content for `cards`
 
 ```markdown
 备忘清单 (页面大标题)
@@ -112,6 +110,58 @@ class=tag&data-info=👆看看还缺点儿什么？
 <!--rehype:className=wrap-text-->
 
 添加 `class=tag&data-lang=Python` 类名和参数，会在卡片右上角标记 _`Python`_
+
+### Command Help
+
+```bash
+Usage: refs-cli [output-dir] [--help|h]
+
+  Displays help information.
+
+Options:
+
+  --version, -v   Show version number
+  --help, -h      Displays help information.
+  --watch, -w     Watch and compile Markdown files.
+  --output, -o    Output directory. defalut(dist)
+  --force, -f     Force file regeneration.
+
+Example:
+
+  $ npx refs-cli
+  $ refs-cli --watch
+  $ refs-cli --output website
+  $ refs-cli
+
+refs-cli@v0.0.1
+```
+
+### Config
+<!--rehype:wrap-class=col-span-2-->
+
+```json
+{
+  "description": "{{description}}, Sharing Quick Reference Cheat Sheets for Developers",
+  "data-info": "👆👆need your participation",
+  "search": {
+    "label": "Search",
+    "placeholder": "Search for cheatsheet",
+    "cancel": "Cancel"
+  },
+  "editor": {
+    "label": "Edit"
+  },
+  "github": {
+    "url": "https://github.com/jaywcjlove/refs-cli"
+  },
+  "home": {
+    "label": "Home",
+    "url": "https://jaywcjlove.github.io/refs-cli"
+  }
+}
+```
+
+Store `.refsrc.json` in the root directory of the project
 
 Markdown 语法注释
 ---

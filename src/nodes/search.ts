@@ -9,7 +9,7 @@ export interface Option extends Partial<RunOptions> {
   homePath?: string;
 }
 
-export function search({ homePath = '', isHome, static_path }: Option = {}): Element[] {
+export function search({ homePath = '', isHome, static_path, config }: Option = {}): Element[] {
   const relativePath = homePath.replace(/\/?index.html$/, isHome ? '' : '/');
   const fuseJSUrl = relativePath + 'js/fuse.min.js';
   const manJSUrl = relativePath + 'js/main.js';
@@ -75,7 +75,7 @@ export function search({ homePath = '', isHome, static_path }: Option = {}): Ele
                       properties: {
                         id: ['mysearch-input'],
                         type: 'search',
-                        placeholder: '搜索备忘清单',
+                        placeholder: config.search?.label || 'Search for cheatsheet',
                         autocomplete: 'off',
                       },
                       children: []
@@ -92,7 +92,7 @@ export function search({ homePath = '', isHome, static_path }: Option = {}): Ele
                   type: 'element',
                   tagName: 'button',
                   properties: { id: ['mysearch-close'], type: 'button' },
-                  children: [{ type: 'text', value: '取消' }],
+                  children: [{ type: 'text', value: config.search?.label || 'Cancel' }],
                 },
               ],
             },
