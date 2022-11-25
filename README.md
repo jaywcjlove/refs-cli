@@ -3,6 +3,7 @@ Refs CLI
 
 <!--rehype:ignore:start-->
 [![CI](https://github.com/jaywcjlove/refs-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/refs-cli/actions/workflows/ci.yml)
+[![NPM version](https://img.shields.io/npm/v/refs-cli.svg?style=flat)](https://npmjs.org/package/refs-cli)
 <!--rehype:ignore:end-->
 
 Command line tool to generate `Quick Reference` website. This is also a tool separated from [`Quick Reference`](https://jaywcjlove.github.io/reference) to help [`Quick Reference`](https://jaywcjlove.github.io/reference) compile and generate HTML websites
