@@ -85,13 +85,15 @@ export function header(options: Option = {}): Element {
       children: [editor],
     },
     ...darkMode(options),
-    {
+  ];
+  if (options.config?.github?.url) {
+    data.push({
       menu: true,
-      href: 'https://github.com/jaywcjlove/reference',
+      href: options.config?.github?.url,
       target: '__blank',
       children: [github],
-    },
-  ];
+    })
+  }
   return {
     type: 'element',
     tagName: 'nav',
