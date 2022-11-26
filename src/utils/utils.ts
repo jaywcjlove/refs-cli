@@ -109,7 +109,7 @@ export async function createHTML(files: IFileDirStat[] = [], opts: Options, num 
     const resultSearchData = Object.keys({ ...searchData })
       .map((name) => searchData[name])
       .filter((item) => typeof item !== 'string');
-    await fs.writeJSON(path.relative(opts.output, 'data.json'), resultSearchData);
+    await fs.writeJSON(path.resolve(opts.output, 'data.json'), resultSearchData);
     const SEARCH_DATA_JS = path.resolve(opts.output, 'data.js');
     await fs.writeFile(SEARCH_DATA_JS, `const REFS_DATA = ${JSON.stringify(resultSearchData)}`);
   }
