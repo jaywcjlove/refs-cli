@@ -11,7 +11,7 @@ const COLOR_REG = /background:(\s+)?rgb\(([\d]+\s+[\d]+\s+[\d]+(\s+)?)\);?/gi;
 
 export function homeCardIcons(node: Root | RootContent, parent: Root | Element, { isHome, static_path, config }: RunOptions) {
   const properties = node.type === 'element' ? node.properties : {};
-  const className = node.type === 'element' && properties ? [properties.class || properties.className].flat() : [];
+  const className = node.type === 'element' && properties ? (typeof properties.class === 'string' ? properties.class.split(' ') : [properties.class].flat()) : [];
   if (
     isHome &&
     node &&
