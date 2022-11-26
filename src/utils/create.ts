@@ -43,14 +43,14 @@ export interface DetailData {
 
 export function create(str = '', options: Options = {}) {
   let title = (str.match(/[^===]+(?=[===])/g) || [])[0] || '';
-  let description = (str.match(/\n==={1,}\n+([\s\S]*?)\n/g) || [])[0] || '';
-  description = description
-    .replace(/^\n[=\n]+/, '')
+  let description = str.replace(/<!--rehype:ignore:start-->([\s\S]*?)?<!--rehype:ignore:end-->/ig, '')
+    .replace(/##([\s\S]*)/g, '')
+    .replace(/[\w\s]+---([\s\S]*)/ig, '')
     .replace(/\[([\s\S]*?)?\]\(([\s\S]*?)?\)/g, '$1')
-    .replace(/<!--([\s\S]*?)-->/gi, '')
-    .replace(/\n/, '');
-
-  description = (options.config.description ||description).replace(/\{\{description\}\}/ig, description);
+    .replace(/[\D]+==+[\n]+/g, '')
+    .replace(/\n+$/g, '')
+    .replace(/[`_\*]/g, '')
+  description = (options.config.description || description).replace(/\{\{description\}\}/ig, description);
   const keywords = `${!options.isHome ? options.filename + ',' : ''}${options.config?.keywords || ''}`;
 
   const subTitle = options.filename && !options.isHome ? `${options.filename} cheatsheet & ` : '';
