@@ -142,7 +142,9 @@ refs-cli@v0.0.1
 
 ```json
 {
-  "description": "{{description}}, Sharing Quick Reference Cheat Sheets for Developers",
+  "title": "Quick Reference",
+  "description": "{{description}}. Sharing Quick Reference Cheat Sheets for Developers",
+  "keywords": "reference-cli,reference,refs-cli,refs,cli",
   "data-info": "👆👆need your participation",
   "search": {
     "label": "Search",

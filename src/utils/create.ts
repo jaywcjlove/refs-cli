@@ -76,7 +76,7 @@ export function create(str = '', options: Options = {}) {
       [
         rehypeDocument,
         {
-          title: `${title ? `${title} & ` : ''} ${subTitle} Quick Reference`,
+          title: `${title ? `${title} & ` : ''} ${subTitle} ${options.config?.title || 'Quick Reference'}`,
           css: [...options.css],
           link: [{ rel: 'icon', href: favicon, type: 'image/svg+xml' }],
           meta: [
