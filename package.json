@@ -1,6 +1,6 @@
 {
   "name": "refs-cli",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Command line tool to generate Quick Reference website.",
   "homepage": "https://jaywcjlove.github.io/refs-cli/",
   "author": "jaywcjlove",
