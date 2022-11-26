@@ -64,7 +64,9 @@ Store `.refsrc.json` in the root directory of the project
 
 ```json
 {
-  "description": "{{description}}, Sharing Quick Reference Cheat Sheets for Developers",
+  "title": "Refs CLI",
+  "description": "{{description}}. Sharing Quick Reference Cheat Sheets for Developers",
+  "keywords": "reference-cli,reference,refs-cli,refs,cli",
   "data-info": "👆👆need your participation",
   "search": {
     "label": "Search",
@@ -78,7 +80,7 @@ Store `.refsrc.json` in the root directory of the project
     "url": "https://github.com/jaywcjlove/refs-cli"
   },
   "home": {
-    "label": "网站首页",
+    "label": "Home",
     "url": "https://jaywcjlove.github.io/refs-cli"
   }
 }

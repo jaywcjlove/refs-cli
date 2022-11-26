@@ -123,7 +123,7 @@ export function header(options: Option = {}): Element {
                 properties: {
                   class: ['title'],
                 },
-                children: [{ type: 'text', value: 'Quick Reference' }],
+                children: [{ type: 'text', value: options.config?.title || 'Quick Reference' }],
               },
             ],
           },
