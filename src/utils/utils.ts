@@ -22,6 +22,7 @@ export interface Config {
   description?: string;
   keywords?: string;
   footer?: string;
+  license?: string;
   'data-info'?: string;
   search?: {
     label: string;

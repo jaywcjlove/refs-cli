@@ -4,7 +4,7 @@ import { Option as InitOption } from './search.js';
 import { getVNode } from '../utils/getSVGNode.js';
 
 export function footer({ isHome, config }: InitOption = {}): Element {
-  let footerText = '© 2022 Kenny Wang.';
+  let footerText = process.env.LICENSE || config?.license || '© 2022 Kenny Wang.';
   const customText = process.env.REF_FOOTER || config?.footer;
   const footerVNode = customText ? getVNode(customText || '') : [];
   if (isHome) {
@@ -13,6 +13,7 @@ export function footer({ isHome, config }: InitOption = {}): Element {
     const cst = new Date(utc + 3600000 * 8);
     footerText += ` Updated on ${formatter('YYYY/MM/DD HH:mm:ss', cst)}`;
   }
+  const licenseVNode =  getVNode(footerText || '');
   return {
     type: 'element',
     tagName: 'footer',
@@ -27,7 +28,7 @@ export function footer({ isHome, config }: InitOption = {}): Element {
           class: ['max-container'],
         },
         children: [
-          { type: 'text', value: footerText },
+          ...licenseVNode,
           ...footerVNode
         ],
       },
