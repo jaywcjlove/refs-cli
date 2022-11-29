@@ -21,6 +21,7 @@ export interface Config {
   title?: string;
   description?: string;
   keywords?: string;
+  footer?: string;
   'data-info'?: string;
   search?: {
     label: string;

@@ -1,9 +1,12 @@
 import formatter from '@uiw/formatter';
 import { Element } from 'hast';
 import { Option as InitOption } from './search.js';
+import { getVNode } from '../utils/getSVGNode.js';
 
-export function footer({ isHome }: InitOption = {}): Element {
+export function footer({ isHome, config }: InitOption = {}): Element {
   let footerText = '© 2022 Kenny Wang.';
+  const customText = process.env.REF_FOOTER || config?.footer;
+  const footerVNode = customText ? getVNode(customText || '') : [];
   if (isHome) {
     const now = new Date();
     const utc = now.getTime() + now.getTimezoneOffset() * 60000;
@@ -23,7 +26,10 @@ export function footer({ isHome }: InitOption = {}): Element {
         properties: {
           class: ['max-container'],
         },
-        children: [{ type: 'text', value: footerText }],
+        children: [
+          { type: 'text', value: footerText },
+          ...footerVNode
+        ],
       },
     ],
   };
