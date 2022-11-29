@@ -161,7 +161,7 @@ refs-cli@v0.0.1
     "url": "https://jaywcjlove.github.io/refs-cli"
   },
   "footer": "<br />备案号：<a href=\"#\">沪ICP备202200000号-1</a>",
-  "license": "支持 HTML 字符串"
+  "license": "Support for HTML strings"
 }
 ```
 
@@ -169,13 +169,26 @@ Store `.refsrc.json` in the root directory of the project
 
 ### Environment Variable
 
+Custom navigation menu
+
 ```ini
 REF_URL=http://ref.ecdata.cn/
 REF_LABEL=网站首页
-; footer added
-REF_FOOTER= <br/>备案号：沪ICP备20220000000号-1
-LICENSE=Copyright (c) <b>2022</b> 支持 HTML 字符串
 ```
+
+Footer added (Support for HTML strings)
+
+```ini
+REF_FOOTER= <br/>备案号：沪ICP备20220000000号-1
+```
+<!--rehype:className=wrap-text-->
+
+Modify copyright information (HTML strings are supported)
+
+```ini
+LICENSE=Copyright (c) <b>2022</b> Support for HTML strings
+```
+<!--rehype:className=wrap-text-->
 
 Create `.env` file in project root directory.
 
