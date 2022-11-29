@@ -138,7 +138,6 @@ refs-cli@v0.0.1
 ```
 
 ### Config
-<!--rehype:wrap-class=col-span-2-->
 
 ```json
 {
@@ -160,11 +159,23 @@ refs-cli@v0.0.1
   "home": {
     "label": "Home",
     "url": "https://jaywcjlove.github.io/refs-cli"
-  }
+  },
+  "footer": "<br />备案号：<a href=\"#\">沪ICP备202200000号-1</a>"
 }
 ```
 
 Store `.refsrc.json` in the root directory of the project
+
+### Environment Variable
+
+```ini
+REF_URL=http://ref.ecdata.cn/
+REF_LABEL=网站首页
+; footer added
+REF_FOOTER= <br/>备案号：沪ICP备20220000000号-1
+```
+
+Create `.env` file in project root directory.
 
 Markdown 语法注释
 ---
