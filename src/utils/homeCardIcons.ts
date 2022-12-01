@@ -18,7 +18,7 @@ export function homeCardIcons(node: Root | RootContent, parent: Root | Element, 
     node.type === 'element' &&
     className.includes('contributing')
   ) {
-    node.properties['data-info'] = config['data-info'] ||'👆need your participation';
+    node.properties['data-info'] = node.properties['data-info'] || config['data-info'] ||'👆need your participation';
   }
   if (
     isHome &&
