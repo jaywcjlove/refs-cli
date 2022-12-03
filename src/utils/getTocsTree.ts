@@ -3,7 +3,7 @@ import { getCodeString } from 'rehype-rewrite';
 import { Element, ElementContent } from 'hast';
 import { panelAddNumber } from './panelAddNumber.js';
 import { getChilds, getHeader } from './childs.js';
-import { ICONS_PATH, getSVGNode } from './getSVGNode.js';
+import { getSVGNode } from './getSVGNode.js';
 import { Options } from './utils.js';
 
 export const titleNum = (tagName = '') => Number(tagName.replace(/^h/, ''));
@@ -100,6 +100,7 @@ export function getTocsTree(arr: (Element | ElementContent)[] = [], result: Elem
       const wrapClass = (toc.properties['wrap-class'] as string);
       if (wrapClass) wrapCls.push(wrapClass);
       delete toc.properties['wrap-class'];
+      const bodyStyle = toc.properties['body-style'];
       let panle: Element | Element[] = {
         type: 'element',
         tagName: 'div',
@@ -114,7 +115,7 @@ export function getTocsTree(arr: (Element | ElementContent)[] = [], result: Elem
               {
                 type: 'element',
                 tagName: 'div',
-                properties: { class: ['wrap-body'] },
+                properties: { style: bodyStyle, class: ['wrap-body'] },
                 children: [...header],
               },
             ],
@@ -126,9 +127,11 @@ export function getTocsTree(arr: (Element | ElementContent)[] = [], result: Elem
       }
       if (resultChilds.length > -1) {
         const bodyStyle = toc.properties['body-style'];
-        delete toc.properties['body-style'];
         const bodyClass = toc.properties['body-class'] as string;
+        delete toc.properties['body-style'];
         delete toc.properties['body-class'];
+        delete toc.properties['wrap-style'];
+        delete toc.properties['wrap-class'];
         if (Array.isArray(panle)) {
           panle = panle.concat(resultChilds);
         } else if (panle.children) {

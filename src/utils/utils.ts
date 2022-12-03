@@ -61,6 +61,7 @@ export async function run(options: Options) {
     await fs.writeFile(path.relative(options.output, 'data.json'), '[]');
     await copyCSSFile(options);
     await copyJSFile(options);
+    await fs.writeFile(path.resolve(options.output, 'data.js'), `const REFS_DATA = []`);
     const files = await recursiveReaddirFiles(process.cwd(), {
       ignored: /[\\/](node_modules|\.git)/g,
       exclude: /(\.json|\.mjs|CONTRIBUTING\.md)$/,
