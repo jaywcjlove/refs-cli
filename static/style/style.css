@@ -393,7 +393,7 @@ body.home .max-container a.home-button:visited:hover {
   border-radius: 2rem;
   font-weight: bold;
   gap: 0.1rem;
-  padding: 0rem 0.6rem;
+  padding: 0rem 0.9rem 0rem 0.6rem;
 }
 
 .home-links.home-card a svg {
