@@ -35,7 +35,7 @@ export function homeCardIcons(node: Root | RootContent, parent: Root | Element, 
         const iconNetworkDefaultPath = path.resolve(static_path, `assets/network.svg`);
         const iconExist = fs.existsSync(iconPath);
         let color = '';
-        child.properties.style = (child.properties.style as string).replace(COLOR_REG, (str) => {
+        child.properties.style = (child.properties.style as string)?.replace(COLOR_REG, (str) => {
           color = str.replace(COLOR_REG, '$2');
           return str.replace(/(\);)/, '/ var(--bg-opacity)$1');
         });
