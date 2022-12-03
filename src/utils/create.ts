@@ -50,6 +50,7 @@ export function create(str = '', options: Options = {}) {
     .replace(/[\D]+==+[\n]+/g, '')
     .replace(/\n+$/g, '')
     .replace(/[`_\*]/g, '')
+    .replace(/!\[([\s\S]*?)\]\(([\s\S]*?)\)\s+/g, '')
   description = (options.config.description || description).replace(/\{\{description\}\}/ig, description);
   const keywords = `${!options.isHome ? options.filename + ',' : ''}${options.config?.keywords || ''}`;
 
