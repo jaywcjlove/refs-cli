@@ -796,6 +796,7 @@ H2 部分
 `R` | Rectangle
 `O` | Oval
 `U` | Rounded
+<!--rehype:className=shortcuts-->
 
 ### 展示标题
 
@@ -851,6 +852,16 @@ H2 部分
 <!--rehype:className=show-header left-align-->
 
 默认表格末尾列`右对齐`，添加 `<!--rehype:className=left-align-->` 类让其`左对齐`
+
+### 强制 code 不换行
+
+| Command | Description |
+| ---- | ---- |
+| `adb remount`                     | Remounts file system with read/write access |
+| `adb reboot bootloader`           | Reboots the device into fastboot            |
+<!--rehype:className=show-header code-nowrap-->
+
+添加 `<!--rehype:className=code-nowrap-->` 注释
 
 列表
 ---
