@@ -81,7 +81,7 @@ export async function createHTML(files: IFileDirStat[] = [], opts: Options, num 
     return;
   }
   ++num;
-  const githubURL = `https://github.com/jaywcjlove/reference/blob/main/${path
+  const githubURL = `${opts.config.github.url || opts.config.github}/blob/main/${path
     .relative(process.cwd(), dataFile.path)
     .replace(path.sep, '/')}`;
 
