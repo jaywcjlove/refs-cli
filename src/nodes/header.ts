@@ -42,6 +42,15 @@ export function header(options: Option = {}): Element {
   const ICONS_SEARCH_PATH = path.resolve(options.static_path, './assets/search.svg');
   const svgNode = getSVGNode(ICONS_PATH);
   const svgSearchNode = getSVGNode(ICONS_SEARCH_PATH);
+  const githubEditButton = options.githubURL ? [
+    {
+      menu: true,
+      href: options.githubURL,
+      target: '__blank',
+      label: options.config.editor?.label || 'Edit',
+      children: [editor],
+    }
+  ] : [];
   const data: (MenuData)[] = [
     {
       menu: true,
@@ -77,13 +86,7 @@ export function header(options: Option = {}): Element {
       ],
     },
     ...getReferrals(options),
-    {
-      menu: true,
-      href: options.githubURL,
-      target: '__blank',
-      label: options.config.editor?.label || 'Edit',
-      children: [editor],
-    },
+    ...githubEditButton,
     ...darkMode(options),
   ];
   if (options.config?.github?.url) {

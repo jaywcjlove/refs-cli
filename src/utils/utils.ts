@@ -31,6 +31,7 @@ export interface Config {
   },
   editor?: {
     label: string;
+    disabled?: boolean;
   },
   github?: {
     url: string;
@@ -81,9 +82,9 @@ export async function createHTML(files: IFileDirStat[] = [], opts: Options, num 
     return;
   }
   ++num;
-  const githubURL = `${opts.config.github.url || opts.config.github}/blob/main/${path
+  const githubURL = opts.config.github?.url && opts.config.editor?.disabled !== true ? `${opts.config.github.url || opts.config.github}/blob/main/${path
     .relative(process.cwd(), dataFile.path)
-    .replace(path.sep, '/')}`;
+    .replace(path.sep, '/')}` : '';
 
   const mdstr = await fs.readFile(dataFile.path);
   const htmlPath = path.relative(DOCS, dataFile.path);
