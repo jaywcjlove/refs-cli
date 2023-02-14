@@ -1,5 +1,5 @@
 /** ==========anchor============== */
-if(('onhashchange' in window) && ((typeof document.documentMode==='undefined') || document.documentMode==8)) {
+if (('onhashchange' in window) && ((typeof document.documentMode === 'undefined') || document.documentMode == 8)) {
   window.onhashchange = function () {
     anchorPoint()
     updateAnchor()
@@ -41,9 +41,9 @@ const fuse = new Fuse(REFS_DATA, {
   matchEmptyQuery: !0,
   threshold: .1,
   keys: [
-    { name: "name", weight: 20 }, 
-    { name: 'intro', weight: 2 }, 
-    { name: 'tags', weight: 2 }, 
+    { name: "name", weight: 20 },
+    { name: 'intro', weight: 2 },
+    { name: 'tags', weight: 2 },
     { name: 'sections.t', weight: 5 }
   ],
 });
@@ -55,8 +55,17 @@ const closeBtn = document.getElementById('mysearch-close');
 const searchMenu = document.getElementById('mysearch-menu');
 const searchContent = document.getElementById('mysearch-content');
 const isHome = document.body.classList.contains('home');
+
 function getDocUrl(url = '') {
   return isHome ? url : url.replace('docs/', '');
+}
+function isWindows() {
+  return /windows|win32|win64/i.test(navigator.userAgent);
+}
+
+if (isWindows()) {
+  const searchBtnHint = searchBtn.querySelector('span:last-child');
+  searchBtnHint.innerHTML = 'Ctrl+K';
 }
 searchBtn.addEventListener('click', (ev) => {
   ev.preventDefault();
@@ -77,8 +86,12 @@ document.addEventListener('keydown', (ev) => {
   if (ev.key.toLocaleLowerCase() === 'escape') {
     hideSearch();
   }
-  if (ev.metaKey && ev.key.toLocaleLowerCase() === 'k') {
-    searchBox.classList.contains('show') ? hideSearch() : showSearch();
+  // If in windows, use ctrl + k to search,
+  // win + k is screen projection settings by default
+  if ((isWindows() && ev.ctrlKey) || ev.metaKey) {
+    if (ev.key.toLocaleLowerCase() === 'k') {
+      searchBox.classList.contains('show') ? hideSearch() : showSearch();
+    }
   }
   if (ev.key.toLocaleLowerCase() === 'enter') {
     const url = activeMenu.path || activeMenu?.item.path;
