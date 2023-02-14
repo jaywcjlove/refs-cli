@@ -90,6 +90,7 @@ document.addEventListener('keydown', (ev) => {
   // win + k is screen projection settings by default
   if ((isWindows() && ev.ctrlKey) || ev.metaKey) {
     if (ev.key.toLocaleLowerCase() === 'k') {
+      ev.preventDefault();
       searchBox.classList.contains('show') ? hideSearch() : showSearch();
     }
   }
