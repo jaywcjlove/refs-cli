@@ -45,6 +45,7 @@ export function create(str = '', options: Options = {}) {
   let title = (str.match(/[^===]+(?=[===])/g) || [])[0] || '';
   let description = str.replace(/<!--rehype:ignore:start-->([\s\S]*?)?<!--rehype:ignore:end-->/ig, '')
     .replace(/##([\s\S]*)/g, '')
+    .replace(/<!--([\s\S]*?)-->/g, '')
     .replace(/[\w\s]+---([\s\S]*)/ig, '')
     .replace(/\[([\s\S]*?)?\]\(([\s\S]*?)?\)/g, '$1')
     .replace(/[\D]+==+[\n]+/g, '')
