@@ -123,7 +123,7 @@ export async function createHTML(files: IFileDirStat[] = [], opts: Options, num 
   createHTML(files, opts, num);
 }
 
-const pkg = fs.readJSONSync(path.resolve(__filename, '../../../package.json'));
+export const pkg = fs.readJSONSync(path.resolve(__filename, '../../../package.json'));
 
 export const helpStr = `
   Usage: \x1b[34;1mrefs-cli\x1b[0m [output-dir] [--help|h]
