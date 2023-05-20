@@ -30,8 +30,8 @@ Command line tool to generate `Quick Reference` website. This is also a tool sep
 [Docker](https://jaywcjlove.github.io/reference/docs/docker.html)<!--rehype:style=background: rgb(72 143 223);-->  
 [Dockerfile](https://jaywcjlove.github.io/reference/docs/dockerfile.html)<!--rehype:style=background: rgb(0 72 153);&class=tag&data-lang=Docker-->  
 [Django](https://jaywcjlove.github.io/reference/docs/djiango.html)<!--rehype:style=background: rgb(12 75 51);&class=contributing tag&data-lang=Python-->  
-[Flutter](https://jaywcjlove.github.io/reference/docs/flutter.html)<!--rehype:style=background: rgb(150 220 254);&class=contributing tag&data-lang=Dart-->  
-[Golang](https://jaywcjlove.github.io/reference/docs/golang.html)<!--rehype:style=background: rgb(39 160 193);-->  
+[Flutter](https://jaywcjlove.github.io/reference/docs/flutter.html)<!--rehype:style=background-image: linear-gradient(to left, rgba(236 72 153 / var(\-\-bg\-opacity)), rgba(167 139 250 / var(\-\-bg\-opacity)));&class=contributing tag&data-lang=Dart-->  
+[Golang](https://jaywcjlove.github.io/reference/docs/golang.html)<!--rehype:style=background-image: linear-gradient(to left, rgba(74 222 128 / var(\-\-bg\-opacity)), rgba(59 130 246 / var(\-\-bg\-opacity)));-->  
 <!--rehype:class=home-card-->
 
 <!--rehype:ignore:start-->

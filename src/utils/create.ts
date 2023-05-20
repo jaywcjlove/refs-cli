@@ -137,7 +137,7 @@ export function create(str = '', options: Options = {}) {
               if (idx + 1 === tocsMenus.length && level === 2) {
                 return;
               }
-              if (level < 4) {
+              if (typeof level === 'number' &&level < 4) {
                 detailData.sections.push({
                   a: (menu?.properties?.href) as string,
                   t: getCodeString(menu.children),
