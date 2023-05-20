@@ -495,8 +495,8 @@ body.home .max-container a.home-button:visited:hover {
   text-decoration: none;
 }
 .home-card a:hover {
-  --bg-opacity: 1;
-  --text-opacity: 0.75;
+  --bg-opacity: 1 !important;
+  --text-opacity: 0.75 !important;
 }
 .home-card a svg {
   min-width: 1.6rem;
