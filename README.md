@@ -95,8 +95,8 @@ Store `.refsrc.json` in the root directory of the project
 See [Quick Reference](./docs/quickreference.md) for how to get started. As always, thanks to our amazing contributors!
 <!--rehype:style=padding-bottom:1rem;-->
 
-<!--GAMFC--><a href="https://github.com/jaywcjlove" title="小弟调调™">
-  <img src="https://avatars.githubusercontent.com/u/1680273?v=4" width="42;" alt="小弟调调™"/>
+<!--GAMFC--><a href="https://github.com/jaywcjlove" title="小弟调调">
+  <img src="https://avatars.githubusercontent.com/u/1680273?v=4" width="42;" alt="小弟调调"/>
 </a>
 <a href="https://github.com/renxia" title="任侠">
   <img src="https://avatars.githubusercontent.com/u/2276421?v=4" width="42;" alt="任侠"/>
