@@ -1,13 +1,9 @@
 #!/usr/bin/env node
 import minimist from 'minimist';
 import path from 'node:path';
-import load from '@proload/core';
-import rc from '@proload/plugin-rc';
-import json from '@proload/plugin-json';
+import { autoConf } from 'auto-config-loader';
 import { Options, run, helpStr, __filename } from './utils/utils.js';
 import watch from './watch.js';
-
-load.use([rc, json]);
 
 ;(async () => {
   try {
@@ -29,10 +25,11 @@ load.use([rc, json]);
     }
     argvs.static_path = path.resolve(__filename, '../../static');
     argvs.output = path.resolve(argvs.output || 'dist');
-    const conf = await load('.refs', {
+
+    const conf = await autoConf<any>('refs', {
       mustExist: false,
     });
-    argvs.config = conf?.raw || {};
+    argvs.config = conf || {};
     if (argvs.watch) {
       await watch(argvs);
     } else if (argvs.build) {
