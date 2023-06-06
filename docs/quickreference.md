@@ -177,7 +177,7 @@ Store `.refsrc.json` in the root directory of the project
 
 Support [JSON](https://www.json.org), [JSONC](https://github.com/microsoft/node-jsonc-parser), [JSON5](https://json5.org/), [YAML](https://yaml.org/), [TOML](https://toml.io), [INI](https://en.wikipedia.org/wiki/INI_file), [CJS](http://www.commonjs.org), [Typescript](https://www.typescriptlang.org/), and ESM config load.
 
-`TOML` config example:
+### `TOML` config example:
 
 ```toml
 title = "Refs CLI"
@@ -198,7 +198,7 @@ data-info = "👆👆need your participation"
   url = "https://jaywcjlove.github.io/refs-cli"
 ```
 
-Support for more config loading.
+### Support for more config loading
 
 ```bash
 .refsrc                    .refsrc.json
