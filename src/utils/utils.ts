@@ -120,7 +120,7 @@ export async function createHTML(files: IFileDirStat[] = [], opts: Options, num 
     const SEARCH_DATA_JS = path.resolve(opts.output, 'data.js');
     await fs.writeFile(SEARCH_DATA_JS, `const REFS_DATA = ${JSON.stringify(resultSearchData)}`);
   }
-  await fs.writeFile(outputHTMLPath, html);
+  await fs.writeFile(outputHTMLPath, html as string);
   console.log(`♻️ \x1b[32;1m ${path.relative(opts.output, outputHTMLPath)} \x1b[0m`);
   createHTML(files, opts, num);
 }
