@@ -38,9 +38,6 @@
     "static"
   ],
   "dependencies": {
-    "@types/fs-extra": "^9.0.13",
-    "@types/minimist": "^1.2.2",
-    "@types/node": "^18.11.9",
     "@uiw/formatter": "^2.0.0",
     "@wcj/markdown-to-html": "^2.2.0",
     "auto-config-loader": "^1.7.1",
@@ -62,6 +59,9 @@
     "vfile": "^5.3.5"
   },
   "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.11.9",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
