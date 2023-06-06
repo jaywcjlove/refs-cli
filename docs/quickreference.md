@@ -201,20 +201,20 @@ data-info = "👆👆need your participation"
 ### Support for more config loading
 
 ```bash
-.refsrc                    .refsrc.json
-.refsrc.json5              .refsrc.jsonc
-.refsrc.yaml               .refsrc.yml
-.refsrc.toml               .refsrc.ini
-.refsrc.js                 .refsrc.ts
-.refsrc.cjs                .refsrc.mjs
-.config/refsrc             .config/refsrc.json
-.config/refsrc.json5       .config/refsrc.jsonc
-.config/refsrc.yaml        .config/refsrc.yml
-.config/refsrc.toml        .config/refsrc.ini
-.config/refsrc.js          .config/refsrc.ts
-.config/refsrc.cjs         .config/refsrc.mjs
-refs.config.js             refs.config.ts
-refs.config.cjs            refs.config.mjs
+.refsrc                .refsrc.json
+.refsrc.json5          .refsrc.jsonc
+.refsrc.yaml           .refsrc.yml
+.refsrc.toml           .refsrc.ini
+.refsrc.js             .refsrc.ts
+.refsrc.cjs            .refsrc.mjs
+.config/refsrc         .config/refsrc.json
+.config/refsrc.json5   .config/refsrc.jsonc
+.config/refsrc.yaml    .config/refsrc.yml
+.config/refsrc.toml    .config/refsrc.ini
+.config/refsrc.js      .config/refsrc.ts
+.config/refsrc.cjs     .config/refsrc.mjs
+refs.config.js         refs.config.ts
+refs.config.cjs        refs.config.mjs
 ```
 
 ### Environment Variable
