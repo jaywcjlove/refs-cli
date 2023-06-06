@@ -23,7 +23,7 @@ export function search({ homePath = '', isHome, static_path, config }: Option = 
         src: dataJSUrl,
         defer: true,
       },
-      children: []
+      children: [],
     },
     {
       type: 'element',
@@ -32,7 +32,7 @@ export function search({ homePath = '', isHome, static_path, config }: Option = 
         src: fuseJSUrl,
         defer: true,
       },
-      children: []
+      children: [],
     },
     {
       type: 'element',
@@ -41,7 +41,7 @@ export function search({ homePath = '', isHome, static_path, config }: Option = 
         src: manJSUrl,
         defer: true,
       },
-      children: []
+      children: [],
     },
     {
       type: 'element',
@@ -77,13 +77,13 @@ export function search({ homePath = '', isHome, static_path, config }: Option = 
                         placeholder: config.search?.label || 'Search for cheatsheet',
                         autocomplete: 'off',
                       },
-                      children: []
+                      children: [],
                     },
                     {
                       type: 'element',
                       tagName: 'div',
                       properties: { class: ['mysearch-clear'] },
-                      children: []
+                      children: [],
                     },
                   ],
                 },
@@ -104,13 +104,13 @@ export function search({ homePath = '', isHome, static_path, config }: Option = 
                   type: 'element',
                   tagName: 'div',
                   properties: { id: 'mysearch-menu' },
-                  children: []
+                  children: [],
                 },
                 {
                   type: 'element',
                   tagName: 'div',
                   properties: { id: 'mysearch-content' },
-                  children: []
+                  children: [],
                 },
               ],
             },

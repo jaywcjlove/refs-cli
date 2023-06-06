@@ -31,7 +31,7 @@ export function darkMode({ homePath = '', isHome, static_path }: Option = {}): E
       properties: {
         src: darkJSUrl,
       },
-      children: []
+      children: [],
     },
   ];
 }

@@ -5,7 +5,7 @@ import { autoConf } from 'auto-config-loader';
 import { Options, run, helpStr, __filename } from './utils/utils.js';
 import watch from './watch.js';
 
-;(async () => {
+(async () => {
   try {
     const argvs: Options = minimist(process.argv.slice(2), {
       alias: {
@@ -37,8 +37,8 @@ import watch from './watch.js';
     }
   } catch (error) {
     if (error instanceof Error) {
-      console.log('REFS:', error.message)
-      console.log('REFS:', error)
+      console.log('REFS:', error.message);
+      console.log('REFS:', error);
       console.log(helpStr);
     }
   }

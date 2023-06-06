@@ -9,7 +9,7 @@ export function getChilds(data: Element[] = [], level: number, result: Element[]
   return result;
 }
 
-interface  Data extends Element {
+interface Data extends Element {
   number?: number;
 }
 /** 获取 Heading 到下一个 Heading 之间的内容*/

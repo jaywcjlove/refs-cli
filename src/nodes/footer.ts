@@ -13,7 +13,7 @@ export function footer({ isHome, config }: InitOption = {}): Element {
     const cst = new Date(utc + 3600000 * 8);
     footerText += ` Updated on ${formatter('YYYY/MM/DD HH:mm:ss', cst)}`;
   }
-  const licenseVNode =  getVNode(footerText || '');
+  const licenseVNode = getVNode(footerText || '');
   return {
     type: 'element',
     tagName: 'footer',
@@ -27,10 +27,7 @@ export function footer({ isHome, config }: InitOption = {}): Element {
         properties: {
           class: ['max-container'],
         },
-        children: [
-          ...licenseVNode,
-          ...footerVNode
-        ],
+        children: [...licenseVNode, ...footerVNode],
       },
     ],
   };
