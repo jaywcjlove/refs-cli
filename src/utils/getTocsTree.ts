@@ -97,7 +97,7 @@ export function getTocsTree(arr: (Element | ElementContent)[] = [], result: Elem
       if (level === 1) wrapCls.push('max-container');
       const wrapStyle = toc.properties['wrap-style'];
       delete toc.properties['wrap-style'];
-      const wrapClass = (toc.properties['wrap-class'] as string);
+      const wrapClass = toc.properties['wrap-class'] as string;
       if (wrapClass) wrapCls.push(wrapClass);
       delete toc.properties['wrap-class'];
       const bodyStyle = toc.properties['body-style'];
@@ -142,7 +142,12 @@ export function getTocsTree(arr: (Element | ElementContent)[] = [], result: Elem
               properties: { style: bodyStyle, class: [`h${level}wrap-body`, bodyClass] },
               children: [...resultChilds],
             });
-          } else if (panle.children[0] && panle.children[0].type === 'element' && panle.children[0].children[1] && panle.children[0].children[1].type === 'element') {
+          } else if (
+            panle.children[0] &&
+            panle.children[0].type === 'element' &&
+            panle.children[0].children[1] &&
+            panle.children[0].children[1].type === 'element'
+          ) {
             if (Array.isArray(panle.children[0].children[1].properties?.class)) {
               panle.children[0].children[1].properties?.class.push(bodyClass);
             }

@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import {fileURLToPath} from 'node:url';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import recursiveReaddirFiles, { IFileDirStat } from 'recursive-readdir-files';
 import { create } from './create.js';
@@ -28,18 +28,18 @@ export interface Config {
     label: string;
     placeholder: string;
     cancel: string;
-  },
+  };
   editor?: {
     label: string;
     disabled?: boolean;
-  },
+  };
   github?: {
     url: string;
-  },
+  };
   home?: {
     label: string;
     url: string;
-  }
+  };
 }
 
 export interface Options extends Partial<ParsedArgs> {
@@ -74,7 +74,6 @@ export async function run(options: Options) {
   }
 }
 
-
 export async function createHTML(files: IFileDirStat[] = [], opts: Options, num = 0) {
   const dataFile = files[num];
   if (!dataFile) {
@@ -82,9 +81,12 @@ export async function createHTML(files: IFileDirStat[] = [], opts: Options, num 
     return;
   }
   ++num;
-  const githubURL = opts.config.github?.url && opts.config.editor?.disabled !== true ? `${opts.config.github.url || opts.config.github}/blob/main/${path
-    .relative(process.cwd(), dataFile.path)
-    .replace(path.sep, '/')}` : '';
+  const githubURL =
+    opts.config.github?.url && opts.config.editor?.disabled !== true
+      ? `${opts.config.github.url || opts.config.github}/blob/main/${path
+          .relative(process.cwd(), dataFile.path)
+          .replace(path.sep, '/')}`
+      : '';
 
   const mdstr = await fs.readFile(dataFile.path);
   const htmlPath = path.relative(DOCS, dataFile.path);

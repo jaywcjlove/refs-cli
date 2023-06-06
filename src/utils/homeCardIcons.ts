@@ -4,28 +4,27 @@ import { Root, Element, RootContent } from 'hast';
 import { getCodeString } from 'rehype-rewrite';
 import { getSVGNode, ICONS_PATH } from './getSVGNode.js';
 import { DetailData } from './create.js';
-import { Options as RunOptions} from '../utils/utils.js'
+import { Options as RunOptions } from '../utils/utils.js';
 
 const resultHomeCard: Record<string, DetailData> = {};
 const COLOR_REG = /background:(\s+)?rgb\(([\d]+\s+[\d]+\s+[\d]+(\s+)?)\);?/gi;
 
-export function homeCardIcons(node: Root | RootContent, parent: Root | Element, { isHome, static_path, config }: RunOptions) {
+export function homeCardIcons(
+  node: Root | RootContent,
+  parent: Root | Element,
+  { isHome, static_path, config }: RunOptions,
+) {
   const properties = node.type === 'element' ? node.properties : {};
-  const className = node.type === 'element' && properties ? (typeof properties.class === 'string' ? properties.class.split(' ') : [properties.class].flat()) : [];
-  if (
-    isHome &&
-    node &&
-    node.type === 'element' &&
-    className.includes('contributing')
-  ) {
-    node.properties['data-info'] = node.properties['data-info'] || config['data-info'] ||'👆need your participation';
+  const className =
+    node.type === 'element' && properties
+      ? typeof properties.class === 'string'
+        ? properties.class.split(' ')
+        : [properties.class].flat()
+      : [];
+  if (isHome && node && node.type === 'element' && className.includes('contributing')) {
+    node.properties['data-info'] = node.properties['data-info'] || config['data-info'] || '👆need your participation';
   }
-  if (
-    isHome &&
-    node &&
-    node.type === 'element' &&
-    className.includes('home-card')
-  ) {
+  if (isHome && node && node.type === 'element' && className.includes('home-card')) {
     node.children = node.children.map((child) => {
       const href = (child.type === 'element' ? child.properties?.href : '') as string;
       if (href && (href.endsWith('.md') || /^https?:\/\//.test(href)) && child.type === 'element') {

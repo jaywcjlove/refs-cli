@@ -35,23 +35,25 @@ type MenuData = {
   class?: string[];
   id?: string;
   children?: (Element | ElementContent)[];
-}
+};
 
 export function header(options: Option = {}): Element {
   const ICONS_PATH = path.resolve(options.static_path, './assets/quickreference.svg');
   const ICONS_SEARCH_PATH = path.resolve(options.static_path, './assets/search.svg');
   const svgNode = getSVGNode(ICONS_PATH);
   const svgSearchNode = getSVGNode(ICONS_SEARCH_PATH);
-  const githubEditButton = options.githubURL ? [
-    {
-      menu: true,
-      href: options.githubURL,
-      target: '__blank',
-      label: options.config.editor?.label || 'Edit',
-      children: [editor],
-    }
-  ] : [];
-  const data: (MenuData)[] = [
+  const githubEditButton = options.githubURL
+    ? [
+        {
+          menu: true,
+          href: options.githubURL,
+          target: '__blank',
+          label: options.config.editor?.label || 'Edit',
+          children: [editor],
+        },
+      ]
+    : [];
+  const data: MenuData[] = [
     {
       menu: true,
       href: 'javascript:void(0);',
@@ -95,7 +97,7 @@ export function header(options: Option = {}): Element {
       href: options.config?.github?.url,
       target: '__blank',
       children: [github],
-    })
+    });
   }
   return {
     type: 'element',

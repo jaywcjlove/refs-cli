@@ -12,6 +12,7 @@
   },
   "scripts": {
     "prepare": "husky install",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,json}'",
     "build": "tsc",
     "watch": "tsc --watch",
     "help": "node ./lib/cli.js --help",
