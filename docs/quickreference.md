@@ -147,6 +147,8 @@ refs-cli@v0.0.1
 
 ### Config
 
+Store `.refsrc.json` in the root directory of the project
+
 ```json
 {
   "title": "Quick Reference",
@@ -173,7 +175,47 @@ refs-cli@v0.0.1
 }
 ```
 
-Store `.refsrc.json` in the root directory of the project
+Support [JSON](https://www.json.org), [JSONC](https://github.com/microsoft/node-jsonc-parser), [JSON5](https://json5.org/), [YAML](https://yaml.org/), [TOML](https://toml.io), [INI](https://en.wikipedia.org/wiki/INI_file), [CJS](http://www.commonjs.org), [Typescript](https://www.typescriptlang.org/), and ESM config load.
+
+`TOML` config example:
+
+```toml
+title = "Refs CLI"
+description = "{{description}}. Sharing Quick Reference Cheat Sheets for Developers"
+keywords = "reference-cli,reference,refs-cli,refs,cli"
+data-info = "👆👆need your participation"
+[search]
+  label = "Search"
+  placeholder = "Search for cheatsheet"
+  cancel = "Cancel"
+
+[editor]
+  label = "Edit"
+[github]
+  url = "https://github.com/jaywcjlove/refs-cli"
+[home]
+  label = "Home"
+  url = "https://jaywcjlove.github.io/refs-cli"
+```
+
+Support for more config loading.
+
+```bash
+.refsrc                    .refsrc.json
+.refsrc.json5              .refsrc.jsonc
+.refsrc.yaml               .refsrc.yml
+.refsrc.toml               .refsrc.ini
+.refsrc.js                 .refsrc.ts
+.refsrc.cjs                .refsrc.mjs
+.config/refsrc             .config/refsrc.json
+.config/refsrc.json5       .config/refsrc.jsonc
+.config/refsrc.yaml        .config/refsrc.yml
+.config/refsrc.toml        .config/refsrc.ini
+.config/refsrc.js          .config/refsrc.ts
+.config/refsrc.cjs         .config/refsrc.mjs
+refs.config.js             refs.config.ts
+refs.config.cjs            refs.config.mjs
+```
 
 ### Environment Variable
 
