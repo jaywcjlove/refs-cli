@@ -59,7 +59,7 @@
     "vfile": "^5.3.5"
   },
   "devDependencies": {
-    "@types/fs-extra": "^9.0.13",
+    "@types/fs-extra": "^11.0.0",
     "@types/minimist": "^1.2.2",
     "@types/node": "^18.11.9",
     "husky": "^8.0.3",
