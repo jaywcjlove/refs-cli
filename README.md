@@ -104,6 +104,8 @@ Store `.refsrc.json` in the root directory of the project
 }
 ```
 
+Support adding [`giscus`](https://giscus.app) comments.
+
 Support [JSON](https://www.json.org), [JSONC](https://github.com/microsoft/node-jsonc-parser), [JSON5](https://json5.org/), [YAML](https://yaml.org/), [TOML](https://toml.io), [INI](https://en.wikipedia.org/wiki/INI_file), [CJS](http://www.commonjs.org), [Typescript](https://www.typescriptlang.org/), and ESM config load.
 
 `TOML` config example:
