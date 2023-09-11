@@ -27,18 +27,21 @@ export function getTocsTitleNode(arr: (Element | ElementContent)[] = [], result:
   return result;
 }
 
-export function addTocsInWarp(tocsData = [], menuData, isDone = false) {
+export function addTocsInWarp(tocsData = [], giscus = [], menuData, isDone = false) {
   const childs = tocsData.map((item) => {
     if (item.properties?.class?.includes('h1wrap-body')) {
       isDone = true;
     }
     if (!isDone && item.children) {
-      item.children = addTocsInWarp([...item.children], menuData, isDone);
+      item.children = addTocsInWarp([...item.children], giscus, menuData, isDone);
     }
     return item;
   });
   if (isDone) {
     childs.splice(1, 0, menuData);
+    giscus.forEach((item) => {
+      childs.push(item);
+    });
   }
   return childs;
 }
