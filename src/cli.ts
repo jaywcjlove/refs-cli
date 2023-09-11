@@ -2,7 +2,7 @@
 import minimist from 'minimist';
 import path from 'node:path';
 import { autoConf } from 'auto-config-loader';
-import { Options, run, helpStr, __filename } from './utils/utils.js';
+import { type Options, run, helpStr, __filename, type Config } from './utils/utils.js';
 import watch from './watch.js';
 
 (async () => {
@@ -26,7 +26,7 @@ import watch from './watch.js';
     argvs.static_path = path.resolve(__filename, '../../static');
     argvs.output = path.resolve(argvs.output || 'dist');
 
-    const conf = await autoConf<any>('refs', {
+    const conf = await autoConf<Config>('refs', {
       mustExist: false,
     });
     argvs.config = conf || {};
