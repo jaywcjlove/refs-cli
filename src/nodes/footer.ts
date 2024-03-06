@@ -4,7 +4,10 @@ import { Option as InitOption } from './search.js';
 import { getVNode } from '../utils/getSVGNode.js';
 
 export function footer({ isHome, config }: InitOption = {}): Element {
-  let footerText = process.env.LICENSE || config?.license || '© 2022 Kenny Wang.';
+  let footerText =
+    process.env.LICENSE ||
+    config?.license ||
+    '© 2022 <a href="https://wangchujiang.com/#/app" target="_blank">Kenny Wang</a>.';
   const customText = process.env.REF_FOOTER || config?.footer;
   const footerVNode = customText ? getVNode(customText || '') : [];
   if (isHome) {
