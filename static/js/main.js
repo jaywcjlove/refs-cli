@@ -54,10 +54,7 @@ const searchInput = document.getElementById('mysearch-input');
 const closeBtn = document.getElementById('mysearch-close');
 const searchMenu = document.getElementById('mysearch-menu');
 const searchContent = document.getElementById('mysearch-content');
-const isHome = document.body.classList.contains('home');
-function getDocUrl(url = '') {
-  return isHome ? url : url.replace('docs/', '');
-}
+
 searchBtn.addEventListener('click', (ev) => {
   ev.preventDefault();
   showSearch();
@@ -84,7 +81,7 @@ document.addEventListener('keydown', (ev) => {
   }
   if (key === 'enter') {
     const url = activeMenu.path || activeMenu?.item.path;
-    window.location.href = getDocUrl(url);
+    window.location.href = `/${url}`;
   }
   if (key === 'arrowdown') {
     activeAnchorElm('down');
@@ -143,7 +140,7 @@ function searchResult(value) {
     const tags = (item.item.tags || []).join(',').replace(getValueReg(value), (txt) => {
       return `<mark>${txt}</mark>`;
     });
-    const href = isHome ? item.item.path : item.item.path.replace('docs/', '');
+    const href = `/${item.item.path}`;
     if (idx === 0) {
       activeIndex = idx;
       activeMenu = item.item;
@@ -176,7 +173,7 @@ function searchSectionsResult(idx = 0) {
   if (data && data.item && data.item.sections) {
     data.item.sections.forEach((item, idx) => {
       const label = item.t.replace(getValueReg(inputValue), (txt) => `<mark>${txt}</mark>`);
-      const href = getDocUrl(data.item.path);
+      const href = `/${data.item.path}`;
       if (item.l < 3) {
         sectionHTML += `<li><a href="${href + item.a}">${label}</a><div>`;
       } else {
