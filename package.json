@@ -42,7 +42,7 @@
     "@uiw/formatter": "^2.0.0",
     "@wcj/markdown-to-html": "^2.2.0",
     "auto-config-loader": "^1.7.1",
-    "chokidar": "^3.5.3",
+    "chokidar": "^4.0.0",
     "dotenv": "^16.0.3",
     "fs-extra": "^11.0.0",
     "markdownlint-cli": "^0.42.0",
