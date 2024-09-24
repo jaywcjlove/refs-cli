@@ -56,7 +56,7 @@
     "rehype-slug": "^6.0.0",
     "remark-gemoji": "^7.0.1",
     "unified": "^10.1.2",
-    "unist-util-visit": "^4.1.1",
+    "unist-util-visit": "^5.0.0",
     "vfile": "^6.0.0"
   },
   "devDependencies": {
