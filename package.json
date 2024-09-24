@@ -40,7 +40,7 @@
   ],
   "dependencies": {
     "@uiw/formatter": "^2.0.0",
-    "@wcj/markdown-to-html": "^2.2.0",
+    "@wcj/markdown-to-html": "^3.0.0",
     "auto-config-loader": "^1.7.1",
     "chokidar": "^4.0.0",
     "dotenv": "^16.0.3",
