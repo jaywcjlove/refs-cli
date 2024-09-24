@@ -48,7 +48,7 @@
     "markdownlint-cli": "^0.42.0",
     "minimist": "^1.2.7",
     "recursive-readdir-files": "^2.3.0",
-    "rehype-autolink-headings": "^6.1.1",
+    "rehype-autolink-headings": "^7.0.0",
     "rehype-document": "^6.1.0",
     "rehype-parse": "^8.0.4",
     "rehype-raw": "^6.1.1",
