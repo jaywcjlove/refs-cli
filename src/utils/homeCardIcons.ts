@@ -42,6 +42,7 @@ export function homeCardIcons(
         const labelNode: Element = {
           type: 'element',
           tagName: 'span',
+          properties: {},
           children: child.children,
         };
         const title = getCodeString(child.children);

@@ -64,6 +64,7 @@ export function header(options: Option = {}): Element {
         {
           type: 'element',
           tagName: 'span',
+          properties: {},
           children: [
             {
               type: 'text',
@@ -74,6 +75,7 @@ export function header(options: Option = {}): Element {
         {
           type: 'element',
           tagName: 'span',
+          properties: {},
           children: [
             {
               type: 'text',
