@@ -397,6 +397,14 @@ Add a style annotation `<!--rehype:style=background:#e91e63;-->` below the H3 he
 
 Add the `<!--rehype:className=shortcuts-->` style class to the list to display the shortcut key style.
 
+Key | value
+:---- | ----
+ directions | `Shortcuts` |
+ directions | `Shortcuts` |
+<!--rehype:className=shortcuts-last-->
+
+Add the `<!--rehype:className=shortcuts-last-->` style class to the list to display the shortcut key style.
+
 ### Code line number
 
 ```jsx showLineNumbers
@@ -471,7 +479,8 @@ Hide card title, add comment style below H3 title
 ---- | ----
 `<!--rehype:className=wrap-text-->` | 强制`换行`
 `<!--rehype:className=show-header-->` | 展示表格`表头`
-`<!--rehype:className=shortcuts-->` | `快捷键`样式
+`<!--rehype:className=shortcuts-->` | 表首列`快捷键`样式
+`<!--rehype:className=shortcuts-last-->` | 表尾列`快捷键`样式
 `<!--rehype:className=auto-wrap-->` | 隐藏表头强制小尺寸`自动换行`
 `<!--rehype:className=style-list-arrow-->` | 列表`箭头`样式展示表格
 `<!--rehype:className=style-list-->` | `列表`样式展示表格
