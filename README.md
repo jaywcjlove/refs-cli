@@ -86,6 +86,11 @@ Store `.refsrc.json` in the root directory of the project
     "label": "Home",
     "url": "https://jaywcjlove.github.io/refs-cli"
   },
+  "meta": [
+    { "name": "author", "content": "jaywcjlove" },
+    { "name": "license", "content": "MIT" },
+    { "name": "funding", "content": "https://jaywcjlove.github.io/#/sponsor" }
+  ],
   "giscus": {
     "src": "https://giscus.app/client.js",
     "data-repo": "jaywcjlove/refs-cli",
