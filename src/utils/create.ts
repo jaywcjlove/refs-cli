@@ -90,7 +90,7 @@ export function create(str = '', options: Options = {}) {
           title: `${title ? `${title} & ` : ''} ${subTitle} ${options.config?.title || 'Quick Reference'}`,
           css: [...options.css],
           link: [{ rel: 'icon', href: favicon, type: 'image/svg+xml' }],
-          meta: [{ description: description }, { keywords: keywords }, ...(options.config?.meta || [])],
+          meta: [{ description: description }, { keywords: keywords }, ...metaData],
         },
       ],
     ],
