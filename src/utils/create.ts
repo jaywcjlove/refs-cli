@@ -62,7 +62,7 @@ export function create(str = '', options: Options = {}) {
   const metaData = Array(...(options.config?.meta || [])).map((item) => {
     const newItem = { ...item };
     if (newItem.href) {
-      newItem.href = newItem.href.replace(/\{\{RELATIVE_PATH\}\}/gi, RELATIVE_PATH);
+      newItem.href = newItem.href.replace(/\{\{RELATIVE_PATH\}\}/gi, RELATIVE_PATH == '' ? '' : RELATIVE_PATH);
     }
     return newItem;
   });
