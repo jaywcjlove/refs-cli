@@ -86,6 +86,7 @@ Store `.refsrc.json` in the root directory of the project
     "label": "Home",
     "url": "https://jaywcjlove.github.io/refs-cli"
   },
+  "favicon": "{{RELATIVE_PATH}}icons/favicon.ico",
   "meta": [
     { "name": "author", "content": "jaywcjlove" },
     { "name": "license", "content": "MIT" },

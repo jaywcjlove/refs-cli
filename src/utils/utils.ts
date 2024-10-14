@@ -25,6 +25,7 @@ export interface Config {
   license?: string;
   giscus?: Record<string, string>;
   meta?: Array<Record<string, string>>;
+  favicon?: string;
   'data-info'?: string;
   search?: {
     label: string;
@@ -152,3 +153,8 @@ export const helpStr = `
 
   refs-cli@v${pkg.version}
 `;
+
+export const getRelativePath = (pathString: string) => {
+  const RELATIVE_PATH = process.env.RELATIVE_PATH || '';
+  return pathString.replace(/\{\{RELATIVE_PATH\}\}/gi, RELATIVE_PATH == '' ? '' : `${RELATIVE_PATH}/`);
+};
