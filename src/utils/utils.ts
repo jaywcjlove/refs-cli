@@ -24,6 +24,7 @@ export interface Config {
   footer?: string;
   license?: string;
   giscus?: Record<string, string>;
+  meta?: Array<Record<string, string>>;
   'data-info'?: string;
   search?: {
     label: string;
