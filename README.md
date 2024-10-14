@@ -89,7 +89,11 @@ Store `.refsrc.json` in the root directory of the project
   "meta": [
     { "name": "author", "content": "jaywcjlove" },
     { "name": "license", "content": "MIT" },
-    { "name": "funding", "content": "https://jaywcjlove.github.io/#/sponsor" }
+    { "name": "funding", "content": "https://jaywcjlove.github.io/#/sponsor" },
+    { "rel": "apple-touch-icon", "href": "{{RELATIVE_PATH}}/icons/touch-icon-iphone.png" },
+    { "rel": "apple-touch-icon", "sizes": "152x152", "href": "{{RELATIVE_PATH}}/icons/touch-icon-ipad.png" },
+    { "rel": "apple-touch-icon", "sizes": "180x180", "href": "{{RELATIVE_PATH}}/icons/touch-icon-iphone-retina.png" },
+    { "rel": "apple-touch-icon", "sizes": "167x167", "href": "{{RELATIVE_PATH}}/icons/touch-icon-ipad-retina.png" }
   ],
   "giscus": {
     "src": "https://giscus.app/client.js",

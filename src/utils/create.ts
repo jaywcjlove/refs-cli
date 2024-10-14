@@ -58,7 +58,14 @@ export function create(str = '', options: Options = {}) {
   const keywords = `${!options.isHome ? options.filename + ',' : ''}${options.config?.keywords || ''}`;
 
   const subTitle = options.filename && !options.isHome ? `${options.filename} cheatsheet & ` : '';
-
+  const RELATIVE_PATH = process.env.RELATIVE_PATH || '';
+  const metaData = Array(...(options.config?.meta || [])).map((item) => {
+    const newItem = { ...item };
+    if (newItem.href) {
+      newItem.href = newItem.href.replace(/\{\{RELATIVE_PATH\}\}/gi, RELATIVE_PATH);
+    }
+    return newItem;
+  });
   /** 用于搜索数据 */
   const detailData: DetailData = {
     title: title.replace(/\n/g, ''),

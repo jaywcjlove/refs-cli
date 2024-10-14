@@ -108,6 +108,7 @@ export async function createHTML(files: IFileDirStat[] = [], opts: Options, num 
       path.relative(path.dirname(outputHTMLPath), path.resolve(opts.output, 'style/katex.css')),
     ],
   };
+  process.env.RELATIVE_PATH = path.relative(path.dirname(outputHTMLPath), opts.output).replace(/[\\/]/g, '/');
   const { html, data } = create(mdstr.toString(), { ...options, ...opts });
   if (!options.isHome) {
     const searchData = await fs.readJSON(SEARCH_DATA_CACHE);
