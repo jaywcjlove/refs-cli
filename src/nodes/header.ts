@@ -23,6 +23,7 @@ export function getReferrals(options: Option = {}): MenuData[] {
       target: '__blank',
       label: label,
       children: [home],
+      class: ['home'],
     },
   ];
 }
@@ -50,6 +51,7 @@ export function header(options: Option = {}): Element {
           target: '__blank',
           label: options.config.editor?.label || 'Edit',
           children: [editor],
+          class: ['edit'],
         },
       ]
     : [];
