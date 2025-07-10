@@ -96,6 +96,7 @@ Store `.refsrc.json` in the root directory of the project
     { "rel": "apple-touch-icon", "sizes": "180x180", "href": "{{RELATIVE_PATH}}/icons/touch-icon-iphone-retina.png" },
     { "rel": "apple-touch-icon", "sizes": "167x167", "href": "{{RELATIVE_PATH}}/icons/touch-icon-ipad-retina.png" }
   ],
+  "analyticsId": "G-XXXXXX",
   "giscus": {
     "src": "https://giscus.app/client.js",
     "data-repo": "jaywcjlove/refs-cli",

@@ -23,6 +23,8 @@ export interface Config {
   keywords?: string;
   footer?: string;
   license?: string;
+  /** Google Analytics ID */
+  analyticsId?: string;
   giscus?: Record<string, string>;
   meta?: Array<Record<string, string>>;
   favicon?: string;

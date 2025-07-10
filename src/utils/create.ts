@@ -10,6 +10,7 @@ import { footer } from '../nodes/footer.js';
 import { search } from '../nodes/search.js';
 import { header } from '../nodes/header.js';
 import { giscus } from '../nodes/giscus.js';
+import { googleAnalytics } from '../nodes/google.js';
 import { rehypeUrls } from './rehypeUrls.js';
 import { tooltips } from './tooltips.js';
 import { homeCardIcons } from './homeCardIcons.js';
@@ -161,7 +162,10 @@ export function create(str = '', options: Options = {}) {
           }
           node.children.unshift(header(options));
           node.children.push(footer(options));
+          const analytics = googleAnalytics(options.config?.analyticsId);
+          // node.children.push(...analytics);
           node.children = node.children.concat(search(options));
+          node.children = node.children.concat(analytics);
         }
       }
     },

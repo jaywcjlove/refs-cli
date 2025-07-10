@@ -171,7 +171,8 @@ Store `.refsrc.json` in the root directory of the project
     "url": "https://jaywcjlove.github.io/refs-cli"
   },
   "footer": "<br />备案号：<a href=\"#\">沪ICP备202200000号-1</a>",
-  "license": "Support for HTML strings"
+  "license": "Support for HTML strings",
+  "analyticsId": "G-9MWEWXSDQK"
 }
 ```
 
