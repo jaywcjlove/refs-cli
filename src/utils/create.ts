@@ -163,9 +163,8 @@ export function create(str = '', options: Options = {}) {
           node.children.unshift(header(options));
           node.children.push(footer(options));
           const analytics = googleAnalytics(options.config?.analyticsId);
-          // node.children.push(...analytics);
-          node.children = node.children.concat(search(options));
-          node.children = node.children.concat(analytics);
+          node.children.push(...analytics);
+          node.children.push(...search(options));
         }
       }
     },
