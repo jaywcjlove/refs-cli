@@ -44,9 +44,9 @@ export interface DetailData {
 }
 
 export function create(str = '', options: Options = {}) {
-  let title = (str.match(/[^===]+(?=[===])/g) || [])[0] || '';
-  let description = str
-    .replace(/<!--rehype:ignore:start-->([\s\S]*?)?<!--rehype:ignore:end-->/gi, '')
+  let tempContent = str.replace(/<!--rehype:ignore:start-->([\s\S]*?)?<!--rehype:ignore:end-->\s+/gi, '').trim();
+  let title = (tempContent.match(/[^===]+(?=[===])/g) || [])[0] || '';
+  let description = tempContent
     .replace(/##([\s\S]*)/g, '')
     .replace(/<!--([\s\S]*?)-->/g, '')
     .replace(/[\w\s]+---([\s\S]*)/gi, '')
@@ -55,7 +55,7 @@ export function create(str = '', options: Options = {}) {
     .replace(/\n+$/g, '')
     .replace(/[`_\*]/g, '')
     .replace(/!\[([\s\S]*?)\]\(([\s\S]*?)\)\s+/g, '');
-  description = (options.config.description || description).replace(/\{\{description\}\}/gi, description);
+  description = (options.config.description || description).replace(/\{\{description\}\}/gi, description).trim();
   const keywords = `${!options.isHome ? options.filename + ',' : ''}${options.config?.keywords || ''}`;
 
   const subTitle = options.filename && !options.isHome ? `${options.filename} cheatsheet & ` : '';

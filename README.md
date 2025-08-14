@@ -1,3 +1,20 @@
+<!--rehype:ignore:start-->
+<div align="center" markdown="1">
+  <sup>Special thanks to:</sup>
+  <br>
+  <br>
+  <a href="https://go.warp.dev/reference">
+    <img alt="Warp sponsorship" width="400" src="./appicon/Warp-Github-LG-01.png">
+  </a>
+  <br>
+  <a href="https://go.warp.dev/reference"><b>Warp, the intelligent terminal for developers!</b></a><br>
+  <a href="https://go.warp.dev/reference">Available for MacOS, Linux, & Windows</a><br><br>
+
+  <br><br>
+</div>
+<hr>
+<!--rehype:ignore:end-->
+
 Refs CLI
 ===
 
