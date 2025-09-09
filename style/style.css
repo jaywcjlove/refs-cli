@@ -294,15 +294,6 @@ ul.style-arrow li:before {
   border-bottom: 5px solid transparent;
 }
 
-table.style-list td:last-child > code:only-child,
-table.style-list-arrow td:last-child > code:only-child {
-  border: 1px solid rgb(from var(--color-fg-default) r g b / 0.3);
-  padding: 3px 5px;
-  border-radius: 5px;
-  width: 100%;
-  display: block;
-}
-
 table.squarefill td:first-child::before,
 table.square td:first-child::before,
 table.circlefill td:first-child::before,
