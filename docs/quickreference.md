@@ -916,16 +916,6 @@ H2 部分
 
 添加 `style-list-arrow` 和 `squarefill` 样式
 
-### 列表表格末行样式
-
-:- | :- | :-
-:- | :- | :-
-`claude` | 启动交互式 REPL | `claude`
-`--continue` | 在当前目录中加载最近的对话 | `claude --continue`
-<!--rehype:className=style-list-arrow circlefill-->
-
-三列表格，末尾列如果只有 `code` 时边框显示
-
 ### 列表箭头样式展示表格
 
 :- | :-
