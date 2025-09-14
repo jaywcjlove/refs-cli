@@ -24,6 +24,8 @@ import watch from './watch.js';
       return console.log(helpStr);
     }
     argvs.static_path = path.resolve(__filename, '../../static');
+    argvs.attachments_path = path.resolve(__filename, '../../attachments');
+
     argvs.output = path.resolve(argvs.output || 'dist');
 
     const conf = await autoConf<Config>('refs', {
