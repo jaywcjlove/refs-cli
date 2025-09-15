@@ -45,7 +45,7 @@
     "chokidar": "^4.0.0",
     "dotenv": "^16.0.3",
     "fs-extra": "^11.0.0",
-    "markdownlint-cli": "^0.43.0",
+    "markdownlint-cli": "^0.44.0",
     "minimist": "^1.2.7",
     "recursive-readdir-files": "^2.3.0",
     "rehype-autolink-headings": "^7.0.0",
