@@ -16,6 +16,9 @@ export async function copyCSSFile(options: Options) {
 export async function copyJSFile(options: Options) {
   await fs.copy(path.resolve(options.static_path, './js'), path.resolve(options.output, 'js'));
 }
+export async function copyAttachments(options: Options) {
+  await fs.copy(path.resolve(options.attachments_path), path.resolve(options.output, 'attachments'));
+}
 
 export interface Config {
   title?: string;
@@ -48,6 +51,7 @@ export interface Config {
 }
 
 export interface Options extends Partial<ParsedArgs> {
+  attachments_path?: string;
   static_path?: string;
   watch?: boolean;
   build?: boolean;
@@ -58,15 +62,18 @@ export interface Options extends Partial<ParsedArgs> {
 
 export async function run(options: Options) {
   options.static_path = path.resolve(__filename, '../../../static');
+  options.attachments_path = path.resolve(__filename, '../../../attachments');
   try {
     await fs.ensureDir(options.output);
     await fs.emptyDir(options.output);
     await fs.ensureDir(path.resolve(options.static_path, './style'));
+    await fs.ensureDir(path.resolve(options.attachments_path));
     await fs.ensureFile(SEARCH_DATA_CACHE);
     await fs.writeFile(SEARCH_DATA_CACHE, '{}');
     await fs.writeFile(path.relative(options.output, 'data.json'), '[]');
     await copyCSSFile(options);
     await copyJSFile(options);
+    await copyAttachments(options);
     await fs.writeFile(path.resolve(options.output, 'data.js'), `const REFS_DATA = []`);
     const files = await recursiveReaddirFiles(process.cwd(), {
       ignored: /[\\/](node_modules|\.git)/g,

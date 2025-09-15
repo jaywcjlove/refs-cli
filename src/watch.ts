@@ -1,14 +1,15 @@
 import path from 'node:path';
 import chokidar from 'chokidar';
 import { getStat } from 'recursive-readdir-files';
-import { Options, DOCS, run, createHTML, copyCSSFile, copyJSFile } from './utils/utils.js';
+import { Options, DOCS, run, createHTML, copyCSSFile, copyJSFile, copyAttachments, __filename } from './utils/utils.js';
 
 export default async function watch(options: Options) {
   await run(options);
   const homeMdPath = path.resolve(process.cwd(), 'README.md');
   const cssDirPath = path.resolve(options.static_path, 'style');
   const jsDirPath = path.resolve(options.static_path, 'js');
-  const watcher = chokidar.watch([DOCS, homeMdPath, cssDirPath, jsDirPath], {
+  const attachmentsDirPath = path.resolve(options.attachments_path);
+  const watcher = chokidar.watch([DOCS, homeMdPath, cssDirPath, jsDirPath, attachmentsDirPath], {
     ignored: /(^|[\/\\])\../, // ignore dotfiles
     persistent: true,
   });
@@ -26,6 +27,11 @@ export default async function watch(options: Options) {
       if (filepath.endsWith('.js')) {
         copyJSFile(options);
         console.log(`♻️ \x1b[32;1m ${path.relative(jsDirPath, filepath)} \x1b[0m`);
+      }
+      const relativePath = path.relative(attachmentsDirPath, filepath);
+      if (!/^\.\.\\/.test(relativePath)) {
+        copyAttachments(options);
+        console.log(`♻️ \x1b[32;1m ${path.relative(attachmentsDirPath, filepath)} \x1b[0m`);
       }
     })
     .on('error', (error) => console.log(`Watcher error: ${error}`));
