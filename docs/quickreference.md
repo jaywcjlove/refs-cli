@@ -243,6 +243,26 @@ LICENSE=Copyright (c) <b>2022</b> Support for HTML strings
 
 Create `.env` file in project root directory.
 
+### Image
+
+![](./quickreference.svg?#sss=1)
+
+<img src="./quickreference.svg?#sss=1" height="95" width="95" />
+
+<hr />
+
+```markdown
+![](./quickreference.svg?#sss=1)
+
+<img
+  src="./quickreference.svg?#sss=1"
+  height="95"
+  width="95"
+/>
+```
+
+在 Markdown 中引入图片
+
 Markdown Comments Syntax
 ---
 
@@ -1149,3 +1169,8 @@ Each section can have the following subitems:
 `<!--rehype:wrap-style=background: #1b5064;-->`
 ```
 <!--rehype:className=wrap-text -->
+
+另见
+---
+
+- [首页](../README.md)

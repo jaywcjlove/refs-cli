@@ -13,6 +13,7 @@ import { giscus } from '../nodes/giscus.js';
 import { googleAnalytics } from '../nodes/google.js';
 import { rehypeUrls } from './rehypeUrls.js';
 import { tooltips } from './tooltips.js';
+import { copyAsset } from './copyAsset.js';
 import { homeCardIcons } from './homeCardIcons.js';
 import { getTocsTree, getTocsTitleNode, getTocsTitleNodeWarpper, addTocsInWarp } from './getTocsTree.js';
 import { rehypeTitle } from './rehypeTitle.js';
@@ -116,6 +117,7 @@ export function create(str = '', options: Options = {}) {
       return plugins;
     },
     rewrite: (node, index, parent) => {
+      copyAsset(node, options);
       const iconName = rehypeTitle(node, options);
       if (iconName) {
         detailData.icon = iconName;

@@ -112,7 +112,12 @@ export async function createHTML(files: IFileDirStat[] = [], opts: Options, num 
     ],
   };
   process.env.RELATIVE_PATH = path.relative(path.dirname(outputHTMLPath), opts.output).replace(/[\\/]/g, '/');
-  const { html, data } = create(mdstr.toString(), { ...options, ...opts });
+  const { html, data } = create(mdstr.toString(), {
+    ...options,
+    ...opts,
+    fromPath: dataFile.path,
+    outputHTMLPath,
+  });
   if (!options.isHome) {
     const searchData = await fs.readJSON(SEARCH_DATA_CACHE);
     data.path = path.relative(opts.output, outputHTMLPath).replace(/[\\/]/g, '/');
