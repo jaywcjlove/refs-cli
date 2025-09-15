@@ -8,6 +8,8 @@ export function rehypeUrls(node: Root | RootContent) {
     !/^(https?:\/\/)/.test(node.properties.href as string)
   ) {
     let href = node.properties.href as string;
-    node.properties.href = href.replace(/([^\.\/\\]+)\.(md|markdown)/gi, '$1.html');
+    node.properties.href = href
+      .replace(/\/README.(md|markdown)$/gi, '/index.html')
+      .replace(/([^\.\/\\]+)\.(md|markdown)/gi, '$1.html');
   }
 }
