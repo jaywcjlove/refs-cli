@@ -247,7 +247,7 @@ Create `.env` file in project root directory.
 
 ![](./quickreference.svg?#sss=1)
 
-<img src="./quickreference.svg?#sss=1" height="95" width="95" />
+<img src="./quickreference2.svg?#sss=1" height="95" width="95" />
 
 <hr />
 

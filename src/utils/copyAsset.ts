@@ -5,13 +5,17 @@ import * as log from './log.js';
 import { Options } from './create.js';
 
 export function copyied(fromPath: string, toPath: string) {
+  if (fs.existsSync(fromPath) === false) {
+    log.error('\x1b[31;1mcopy failed\x1b[0m')(decodeURIComponent(fromPath), decodeURIComponent(toPath));
+    return;
+  }
   const stat = fs.statSync(fromPath);
   if (!stat.isFile()) {
     return;
   }
   fs.ensureDir(path.dirname(toPath), (err) => {
     if (err) {
-      console.log(` \x1b[31midoc:copy:\x1b[0m`, err);
+      log.log(` \x1b[31midoc:copy:\x1b[0m`)(`create dir failed: ${path.dirname(toPath)}`);
       return;
     }
     fs.copyFile(decodeURIComponent(fromPath), decodeURIComponent(toPath))
