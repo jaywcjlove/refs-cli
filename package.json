@@ -61,6 +61,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.0",
+    "@types/hast": "^3.0.4",
     "@types/minimist": "^1.2.2",
     "@types/node": "^20.0.0",
     "husky": "^9.0.11",
