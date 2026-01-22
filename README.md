@@ -54,6 +54,7 @@ Command line tool to generate `Quick Reference` website. This is also a tool sep
 ## Document
 
 [Reference English](./docs/quickreference.md)<!--rehype:style=background: rgb(92 107 192);&class=contributing&data-info=👆See what's missing?-->   
+[附件目录](./docs/attachments.md)<!--rehype:style=background: rgb(92 107 192);&class=contributing&data-info=👆See what's missing?-->   
 [Reference 中文](https://jaywcjlove.github.io/reference/docs/quickreference.html)<!--rehype:style=background: rgb(139 170 229);&class=contributing-->   
 <!--rehype:class=home-card-->
 
