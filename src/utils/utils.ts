@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import recursiveReaddirFiles, { IFileDirStat } from 'recursive-readdir-files';
 import { create } from './create.js';
+import { generateRSSFeed } from './rss.js';
 import { ParsedArgs } from 'minimist';
 
 export const __filename = fileURLToPath(import.meta.url);

@@ -4,6 +4,7 @@ import path from 'node:path';
 import { autoConf } from 'auto-config-loader';
 import { type Options, run, helpStr, __filename, type Config } from './utils/utils.js';
 import watch from './watch.js';
+import { generateRSSFeed } from './utils/rss.js';
 
 (async () => {
   try {
@@ -11,6 +12,7 @@ import watch from './watch.js';
       alias: {
         watch: 'w',
         build: 'b',
+        rss: 'r',
         output: 'o',
         force: 'f',
       },
@@ -30,7 +32,9 @@ import watch from './watch.js';
       mustExist: false,
     });
     argvs.config = conf || {};
-    if (argvs.watch) {
+    if (argvs.rss) {
+      await generateRSSFeed(argvs);
+    } else if (argvs.watch) {
       await watch(argvs);
     } else if (argvs.build) {
       await run(argvs);
